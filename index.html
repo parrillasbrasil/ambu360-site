@@ -1,42 +1,925 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Ambu360: a plataforma para gestão de empresas de ambulâncias, frota, equipes, escalas, estoque, financeiro, contratos e operações.">
-<meta name="theme-color" content="#08182e"><title>Ambu360 — Sua operação. Sob controle.</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230a294e'/%3E%3Cpath d='M12 48 32 10l20 38H40l-8-18-8 18Z' fill='%2326cbbc'/%3E%3Cpath d='M32 28v14m-7-7h14' stroke='white' stroke-width='4'/%3E%3C/svg%3E">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Ambu360 — Gestão integrada para empresas de ambulâncias</title>
+<meta name="description" content="Ambu360: plataforma de gestão integrada para empresas de ambulâncias, remoções médicas e emergência. Frota, escalas, estoque, contratos e financeiro em um só lugar. Uma solução MODTRAX.">
+<meta name="theme-color" content="#060D16">
+<link rel="canonical" href="https://www.ambu360.com.br/">
+<meta property="og:url" content="https://www.ambu360.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Ambu360">
+<meta property="og:title" content="Ambu360 — Inteligência para cada operação">
+<meta property="og:description" content="Centralize ambulâncias, equipes, escalas, estoque, contratos e financeiro em uma plataforma de gestão para serviços médicos e operações de emergência.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23060D16'/%3E%3Cpath d='M8 24l8-17 8 17M12 19h8' fill='none' stroke='%2300D4FF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js');</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
-:root{--navy:#08182e;--deep:#0d2440;--card:#132f4a;--teal:#21c9bd;--lime:#89edaa;--white:#f4f9fe;--muted:#a9bdcf;--border:#25445e}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.wrap{max-width:1190px;margin:auto;padding:0 24px}.top{position:sticky;top:0;z-index:20;background:#07182ef2;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff18}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font:800 28px Manrope,sans-serif;letter-spacing:-1.5px}.brand svg{width:40px;height:40px}.brand strong{font-weight:800;color:var(--teal)}.nav-links{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:700;color:#d1e4f1}.nav-links a:hover{color:var(--lime)}.pill{display:inline-flex;align-items:center;justify-content:center;border:1px solid #4ec9c1;border-radius:100px;padding:12px 20px;white-space:nowrap}.nav-links .pill{color:#aaf5db}.menu{display:none;background:transparent;border:0;color:#fff;font-size:24px}.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 30%,#15556d81,transparent 45%),linear-gradient(135deg,#08182e,#09203d)}.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px;min-height:665px;padding:90px 24px 120px}.eyebrow,.tag{color:#7ef5c3;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800}.eyebrow:before{content:'●';margin-right:10px}.hero h1{font:800 clamp(43px,5.4vw,72px)/1.09 Manrope,sans-serif;letter-spacing:-3.8px;margin:27px 0}.hero h1 em,h2 em{color:var(--lime);font-style:normal}.lead{font-size:17px;line-height:1.85;color:#b8cee0;max-width:620px}.actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 25px;border-radius:9px;font-weight:800;font-size:14px;border:0;cursor:pointer}.primary{background:linear-gradient(100deg,#23c9b8,#8ce9a3);color:#062d37}.outline{border:1px solid #52758b;color:white}.stats{display:flex;gap:27px;margin-top:65px;color:#b2cddd;font-size:12px}.stats b{display:block;color:white;margin-bottom:6px;font-size:15px}.dashboard{border:1px solid #3d6b7d;background:#10273d;box-shadow:0 40px 90px #0008;border-radius:17px;overflow:hidden;transform:perspective(1100px) rotateY(-5deg) rotateX(3deg)}.dashhead{border-bottom:1px solid #2e5162;padding:20px;display:flex;align-items:center;justify-content:space-between}.dashhead b{font:800 18px Manrope}.dashhead span{color:#7af0b1;font-size:11px}.dashmain{padding:25px}.dashmain>small{color:#a6c5d9;font-size:11px}.dashmain h3{font-size:21px;margin:7px 0 22px}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.kpis div{border:1px solid #36576b;border-radius:9px;background:#1b3c52;padding:15px 10px}.kpis small{font-size:10px;color:#bed2dc}.kpis b{display:block;font-size:25px;margin:7px 0}.kpis span{font-size:10px;color:var(--lime)}.chart{border:1px solid #36576b;margin-top:13px;padding:18px;border-radius:10px}.chart header{display:flex;justify-content:space-between;font-size:12px}.chart svg{display:block;width:100%;margin-top:10px}.band{padding:25px 0;background:#10273e;border-block:1px solid #24455d}.band .wrap{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;color:#bed5e2;font-size:12px;font-weight:800;letter-spacing:1px}.band strong{color:var(--lime)}.section{padding:110px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.head>div{max-width:680px}.head p{max-width:360px;color:var(--muted);font-size:14px;line-height:1.8}h2{font:800 clamp(32px,4vw,52px)/1.2 Manrope,sans-serif;letter-spacing:-2.2px;margin:15px 0}h3{font-family:Manrope,sans-serif}.problem{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.problem article{background:#112a43;border:1px solid var(--border);border-radius:14px;padding:26px}.problem b{display:block;font-size:17px}.problem p,.module p{color:var(--muted);line-height:1.75;font-size:13px}.problem span{display:inline-block;color:#7be9c3;font-size:21px;margin-bottom:25px}.light{background:#eef7fa;color:#0d2940}.light h2 em{color:#108b83}.light .tag{color:#138d86}.light .head p{color:#536f7c}.light .modules{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.module{padding:26px;border-radius:14px;background:white;border:1px solid #d6e7ec;min-height:235px}.module .symbol{font-size:25px;color:#148e87;background:#e5faf2;display:grid;place-items:center;width:54px;height:54px;border-radius:12px}.module h3{font-size:18px;margin:24px 0 8px}.module p{color:#5c7280;margin:0}.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 25px}.filter{border:1px solid #c4dce2;background:#fff;color:#30556a;padding:10px 15px;border-radius:50px;font-size:12px;font-weight:800;cursor:pointer}.filter.active{background:#0b5364;color:white;border-color:#0b5364}.module[hidden]{display:none}.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.features{display:grid;gap:15px}.features article{border:1px solid #2b5266;background:#102d43;border-radius:12px;padding:20px 24px}.features b{color:#a8f1ce}.features p{color:#aac3d3;font-size:13px;line-height:1.7;margin-bottom:0}.how{background:#102b44}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:55px}.steps article{border-top:2px solid #3d7c80;padding-top:24px}.steps span{color:var(--lime);font-weight:800}.steps p{color:#acc5d7;font-size:13px;line-height:1.75}.faq{max-width:880px}.faq details{border-bottom:1px solid #34516a;padding:22px 0}.faq summary{cursor:pointer;font-weight:800}.faq details p{color:#b3cada;line-height:1.75}.contact{background:linear-gradient(120deg,#0d4458,#0d304e);padding:95px 0}.contactgrid{display:grid;grid-template-columns:1fr 435px;gap:80px;align-items:center}.contact p{color:#bfdae2;line-height:1.8}.formcard{background:#f1fafb;color:#12304a;padding:30px;border-radius:15px}.formcard h3{font-size:24px;margin:0 0 8px}.formcard p{color:#5f7b88;font-size:13px}.formcard label{display:block;font-size:12px;font-weight:800;margin:14px 0 7px}.formcard input,.formcard select{display:block;width:100%;padding:13px;border:1px solid #bdd8dd;border-radius:8px;background:#fff}.formcard .btn{width:100%;margin-top:20px}.status{font-size:11px!important}.footer{padding:55px 0 25px;background:#06162a}.footer .row{display:flex;justify-content:space-between;align-items:center;gap:25px}.footer p,.footline{color:#8fa9b9;font-size:12px}.footline{border-top:1px solid #203950;padding-top:25px;margin-top:45px;display:flex;justify-content:space-between}.links{display:flex;gap:25px;font-size:13px}@media(max-width:900px){.hero .grid{grid-template-columns:1fr}.dashboard{max-width:600px;transform:none}.light .modules,.problem{grid-template-columns:repeat(2,1fr)}.contactgrid{grid-template-columns:1fr 1fr;gap:25px}.split{gap:25px}}@media(max-width:640px){.nav{min-height:70px}.brand{font-size:24px}.menu{display:block}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#0b2540;padding:22px;flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.hero .grid{padding-top:65px;padding-bottom:90px;gap:50px;min-height:unset}.hero h1{font-size:43px;letter-spacing:-2px}.stats{flex-wrap:wrap;margin-top:45px}.head{display:block}.section{padding:75px 0}.light .modules,.problem{grid-template-columns:1fr}.split,.contactgrid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.contact{padding:75px 0}.band .wrap{justify-content:center;text-align:center}.footer .row,.footline{display:block}.links{margin-top:30px;flex-wrap:wrap}.kpis b{font-size:18px}}
-</style></head>
+/* ==========================================================================
+   AMBU360 · plano visual
+   Layout: hero em duas colunas (texto + central de despacho em camadas),
+   seções editoriais de largura total, bento na plataforma, interface de
+   software no meio da página, lista editorial nos diferenciais.
+   Tipografia: pilha de sistema (sem fontes externas), títulos pesados.
+   ========================================================================== */
+:root{
+  --bg:#060D16;      /* fundo principal */
+  --bg2:#0D1726;     /* fundo secundário */
+  --sf:#142237;      /* superfícies e cards */
+  --blue:#2563EB;    /* azul tecnológico */
+  --cyan:#00D4FF;    /* ciano */
+  --mint:#16E0BD;    /* verde-água */
+  --fg:#F8FAFC;      /* texto principal */
+  --mut:#94A3B8;     /* texto secundário */
+  --ln:rgba(148,163,184,.14);
+  --ln2:rgba(148,163,184,.26);
+  --g:linear-gradient(100deg,#2563EB 0%,#00D4FF 55%,#16E0BD 100%);
+  --font:"Inter","Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,"SF Pro Display",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --hh:64px;         /* altura do header */
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 var(--font);overflow-x:clip;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:rgba(6,13,22,.9)}
+img{max-width:100%;display:block}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+::selection{background:rgba(0,212,255,.3)}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+section[id]{scroll-margin-top:calc(var(--hh) + env(safe-area-inset-top,0px) - 1px)}
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.sec{padding-block:clamp(4.5rem,9vw,8rem)}
+.gt{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.h2{font-size:clamp(2rem,5vw,3.7rem);line-height:1.04;letter-spacing:-.04em;font-weight:800;text-wrap:balance;max-width:22ch}
+.lede{color:var(--mut);font-size:clamp(1.02rem,1.6vw,1.2rem);max-width:58ch;text-wrap:pretty}
+
+/* ---------- botões ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.9rem 1.45rem;border-radius:999px;border:1px solid transparent;font:700 1rem/1.2 var(--font);text-decoration:none;color:#03101e;background:var(--g);background-size:170% 100%;background-position:0 0;box-shadow:0 10px 34px -10px rgba(0,212,255,.6);cursor:pointer;overflow:hidden;transition:transform .2s ease,box-shadow .3s ease,background-position .5s ease}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.38) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s ease}
+.btn:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 16px 44px -10px rgba(0,212,255,.75)}
+.btn:hover::after{transform:translateX(120%)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn svg{width:1.3em;height:1.3em;flex:none}
+.btn.ghost{background:rgba(255,255,255,.04);color:var(--fg);border-color:var(--ln2);box-shadow:none}
+.btn.ghost::after{display:none}
+.btn.ghost:hover{border-color:var(--cyan);background:rgba(0,212,255,.08)}
+.btn.sm{padding:.58rem 1.1rem;font-size:.92rem}
+.btn.lg{padding:1.1rem 1.9rem;font-size:1.1rem}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(6,13,22,.55);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.hdr.sc{background:rgba(6,13,22,.82);border-bottom-color:var(--ln)}
+.hdr .wrap{display:flex;align-items:center;gap:1.4rem;height:var(--hh)}
+.brand{display:block;flex:none}
+.brand img{height:34px;width:auto}
+.nav{display:flex;align-items:center;gap:.2rem;margin-left:auto}
+.nav a{position:relative;padding:.5rem .85rem;color:var(--mut);text-decoration:none;font-weight:500;font-size:.95rem;border-radius:99px;transition:color .2s}
+.nav a:hover,.nav a[aria-current="true"]{color:var(--fg)}
+.nav a[aria-current="true"]::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:2px;height:2px;border-radius:2px;background:var(--g)}
+.nav .navcta{display:none}
+.hdr .cta-d{flex:none}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:12px;border:1px solid var(--ln2);background:rgba(255,255,255,.04);cursor:pointer;color:var(--fg);align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform .3s,opacity .3s}
+.burger span{position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:calc(var(--hh) + env(safe-area-inset-top,0px) + clamp(2.5rem,6vw,4.5rem)) 0 clamp(3.5rem,7vw,6rem)}
+.aurw{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.aur{position:absolute;inset:-20% -10% auto;height:120%;background:radial-gradient(40% 40% at 20% 28%,rgba(37,99,235,.42),transparent 70%),radial-gradient(34% 34% at 82% 18%,rgba(0,212,255,.22),transparent 70%),radial-gradient(40% 40% at 66% 82%,rgba(22,224,189,.16),transparent 70%);animation:aur 22s ease-in-out infinite alternate}
+@keyframes aur{to{transform:translate3d(3%,4%,0) scale(1.08)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(75% 70% at 55% 35%,#000,transparent);mask-image:radial-gradient(75% 70% at 55% 35%,#000,transparent);opacity:.7}
+.hg{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(2rem,4vw,4rem);align-items:center}
+.hc{min-width:0}
+.kick{display:inline-flex;align-items:center;gap:.65rem;padding:.5rem .95rem;border:1px solid rgba(0,212,255,.3);border-radius:99px;background:rgba(0,212,255,.06);color:var(--cyan);font:600 .74rem/1.3 var(--font);letter-spacing:.13em}
+.kick i{flex:none;width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(22,224,189,.6);animation:ping 2.4s ease-out infinite}
+@keyframes ping{to{box-shadow:0 0 0 10px rgba(22,224,189,0)}}
+h1{margin-top:1.4rem;font-size:clamp(2.4rem,5.2vw,4.3rem);line-height:1;letter-spacing:-.05em;font-weight:800;text-wrap:balance}
+h1 .gt{display:block;margin-top:.08em;padding-bottom:.08em}
+.hc .lede{margin-top:1.6rem;max-width:50ch}
+.acts{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.micro{margin-top:1.6rem;font-size:.85rem;color:var(--mut)}
+
+/* central de despacho (hero) */
+.vis{position:relative;width:100%;max-width:600px;aspect-ratio:1/.95;margin-inline:auto}
+.vis [data-depth]{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.map{position:absolute;inset:4% 3% 7% 7%;border-radius:28px;overflow:hidden;background:linear-gradient(160deg,#10203A,#0A1424);border:1px solid var(--ln2);box-shadow:0 50px 100px -35px rgba(37,99,235,.65),inset 0 1px 0 rgba(255,255,255,.07)}
+.mapsvg{position:absolute;inset:0;width:100%;height:100%}
+.route{animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-20}}
+.ring-p{transform-box:fill-box;transform-origin:center;animation:ringp 2.6s ease-out infinite}
+@keyframes ringp{from{transform:scale(1);opacity:.9}to{transform:scale(4);opacity:0}}
+.demo{position:absolute;left:1rem;top:.9rem;padding:.3rem .7rem;border-radius:99px;font-size:.72rem;font-weight:600;color:var(--mut);background:rgba(6,13,22,.7);border:1px solid var(--ln2)}
+.fc{position:absolute;min-width:0}
+.fi{padding:.8rem 1rem;border-radius:16px;font-size:.8rem;line-height:1.35;background:rgba(18,32,53,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--ln2);box-shadow:0 24px 44px -20px rgba(0,0,0,.8);animation:flt 7s ease-in-out infinite}
+.fi small{display:block;color:var(--mut);font-size:.72rem;font-weight:500}
+.fi b{display:block;font-size:.95rem;font-weight:700;letter-spacing:-.01em}
+.fi em{display:block;font-style:normal;color:var(--mut);font-size:.74rem}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.c1{left:-2%;top:22%}.c1 .fi{display:flex;align-items:center;gap:.8rem}
+.c2{right:-3%;top:5%;width:min(46%,230px)}.c2 .fi{animation-duration:8.5s;animation-delay:-2s}
+.c3{left:0;bottom:3%}.c3 .fi{animation-duration:9s;animation-delay:-4s}
+.c4{right:-1%;bottom:-1%}.c4 .fi{animation-duration:7.5s;animation-delay:-1s}
+.ring{width:46px;height:46px;transform:rotate(-90deg);flex:none}
+.ring circle{fill:none;stroke-width:4.5;stroke-linecap:round}
+.ring .rb{stroke:rgba(148,163,184,.22)}
+.ring .rf{stroke:var(--mint);stroke-dasharray:var(--v) 100;animation:ringin 1.6s ease-out .4s both}
+@keyframes ringin{from{stroke-dasharray:0 100}}
+.pbar{height:5px;border-radius:5px;background:rgba(148,163,184,.2);overflow:hidden;margin:.55rem 0 .4rem}
+.pbar i{display:block;height:100%;width:62%;border-radius:5px;background:var(--g);animation:pb 6s ease-in-out infinite alternate}
+@keyframes pb{from{width:34%}to{width:86%}}
+.av{display:flex;margin:.45rem 0 .35rem}
+.av span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;margin-left:-7px;font-size:.62rem;font-weight:700;border:2px solid #12203A;background:var(--blue);color:#fff}
+.av span:first-child{margin-left:0}
+.av span:nth-child(2){background:#0E8FB5}.av span:nth-child(3){background:#0FA88E}.av span:nth-child(4){background:var(--sf);color:var(--mut)}
+.mb{display:flex;align-items:flex-end;gap:4px;height:34px;margin:.5rem 0 .4rem}
+.mb i{flex:1;min-width:6px;height:var(--h);border-radius:3px 3px 1px 1px;background:var(--g);transform-origin:bottom;animation:grow .9s cubic-bezier(.2,1,.3,1) both;animation-delay:calc(.5s + var(--k)*.07s)}
+@keyframes grow{from{transform:scaleY(0)}}
+.up{color:var(--mint)}
+
+/* ---------- problema ---------- */
+.prob{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:clamp(2rem,4vw,3.2rem)}
+.pb{position:relative;padding:1.6rem 1.5rem 1.7rem;border-left:2px solid var(--ln2);background:linear-gradient(90deg,rgba(148,163,184,.07),transparent 80%);transition:background .3s,border-color .3s,transform .3s}
+.pb:hover{border-image:var(--g) 1;background:linear-gradient(90deg,rgba(0,212,255,.1),transparent 80%);transform:translateX(4px)}
+.pb svg{width:26px;height:26px;fill:none;stroke:var(--cyan);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:1rem}
+.pb h3{font-size:1.15rem;letter-spacing:-.02em;margin-bottom:.4rem}
+.pb p{color:var(--mut);font-size:.98rem}
+
+/* ---------- plataforma (bento) ---------- */
+.head{display:grid;gap:1.2rem}
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem;margin-top:clamp(2rem,4vw,3.2rem)}
+.bt{position:relative;grid-column:span 4;padding:1.6rem;border-radius:22px;overflow:hidden;background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.012));border:1px solid var(--ln);transition:border-color .3s,transform .3s}
+.bt::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(0,212,255,.16),transparent 62%);opacity:0;transition:opacity .3s}
+.bt:hover{border-color:rgba(0,212,255,.5);transform:translateY(-3px)}
+.bt:hover::before{opacity:1}
+.bt>*{position:relative}
+.bt svg.ic{width:30px;height:30px;fill:none;stroke:var(--cyan);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:1.1rem}
+.bt h3{font-size:1.2rem;letter-spacing:-.02em;margin-bottom:.45rem}
+.bt p{color:var(--mut);font-size:.97rem;max-width:44ch}
+.b1{grid-column:span 7}.b2{grid-column:span 5}.b6,.b8{grid-column:span 3}.b7{grid-column:span 6}
+.b1,.b2,.b7{background:linear-gradient(155deg,rgba(37,99,235,.2),rgba(0,212,255,.05) 60%,rgba(255,255,255,.01));border-color:rgba(0,212,255,.24)}
+.b1 h3,.b2 h3,.b7 h3{font-size:1.45rem}
+.mini{margin-top:1.4rem;display:grid;gap:.45rem}
+.mini li{display:flex;align-items:center;gap:.7rem;padding:.6rem .85rem;border-radius:12px;background:rgba(6,13,22,.55);border:1px solid var(--ln);font-size:.9rem}
+.mini li span{margin-left:auto;font-size:.76rem;color:var(--mut)}
+.dot{flex:none;width:8px;height:8px;border-radius:50%}
+.dot.d{background:var(--mint)}.dot.a{background:var(--cyan)}.dot.r{background:#7AA2FF}.dot.m{background:#7C8BA3}
+.chips{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;border-radius:99px;font-size:.82rem;background:rgba(6,13,22,.55);border:1px solid var(--ln)}
+.fbars{display:flex;align-items:flex-end;gap:6px;height:76px;margin-top:1.4rem}
+.fbars i{flex:1;height:var(--h);border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,var(--cyan),rgba(37,99,235,.55));opacity:.9}
+.note{margin-top:1.6rem;font-size:.85rem;color:var(--mut);max-width:70ch}
+
+/* ---------- interface do sistema (réplica ilustrativa, tema claro do produto) ---------- */
+.app{--k-bg:#F3F6F8;--k-ink:#0F172A;--k-mut:#64748B;--k-line:#E3E8EE;--k-teal:#0E9F8A;--k-teal2:#0A7D6D;--k-tint:#E3F6F1;--k-blue:#2563EB;--k-org:#E8710A;
+  margin-top:clamp(2rem,4vw,3.4rem);border-radius:20px;overflow:hidden;border:1px solid var(--ln2);background:var(--k-bg);color:var(--k-ink);font-size:.8rem;line-height:1.4;box-shadow:0 60px 120px -50px rgba(37,99,235,.65),0 0 80px -30px rgba(0,212,255,.35)}
+.app .ico{width:1.1em;height:1.1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.app ul{margin:0;padding:0;list-style:none}
+.atop{display:flex;align-items:center;gap:.9rem;padding:.7rem 1rem;background:#0B1524;color:var(--mut);font-size:.8rem}
+.atop .dots i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#2A3B57;margin-right:5px}
+.atop .live{margin-left:auto;display:inline-flex;align-items:center;gap:.5rem;color:var(--mint);font-weight:600;text-align:right}
+.atop .live i{flex:none;width:7px;height:7px;border-radius:50%;background:var(--mint);animation:ping 2.4s ease-out infinite}
+.abody{display:grid;grid-template-columns:214px minmax(0,1fr)}
+/* barra lateral */
+.side{display:flex;flex-direction:column;min-width:0;padding:.9rem .7rem;background:#fff;border-right:1px solid var(--k-line)}
+.sb-head{display:flex;align-items:center;gap:.6rem;padding:.1rem .3rem .85rem}
+.sb-ico{display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:10px;background:var(--k-teal);color:#fff;font-size:1.15rem}
+.sb-head b{display:block;font-size:.98rem;line-height:1.1;letter-spacing:-.01em}
+.sb-head small{display:block;color:var(--k-mut);font-size:.66rem}
+.sb-head .chev{margin-left:auto;color:var(--k-mut)}
+.sb-search{display:flex;align-items:center;gap:.5rem;padding:.5rem .65rem;border:1px solid var(--k-line);border-radius:9px;background:#F8FAFB;color:var(--k-mut);font-size:.7rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-nav{flex:1;min-height:0;overflow:hidden;margin-top:.8rem;display:grid;align-content:start;gap:2px;-webkit-mask-image:linear-gradient(#000 84%,transparent);mask-image:linear-gradient(#000 84%,transparent)}
+.sb-nav li{display:flex;align-items:center;gap:.6rem;padding:.5rem .6rem;border-radius:9px;color:#475569;font-size:.74rem}
+.sb-nav li span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-nav li.on{background:var(--k-tint);color:var(--k-teal2);font-weight:600}
+.ph{flex:none;font-style:normal;font-size:.56rem;font-weight:700;letter-spacing:.04em;padding:.12rem .4rem;border-radius:5px;background:#DDF3EC;color:var(--k-teal2)}
+.ph.g{background:none;color:#94A3B8;font-weight:500;letter-spacing:0;font-size:.62rem}
+.sb-foot{display:flex;justify-content:space-between;gap:.5rem;margin-top:.5rem;padding:.7rem .3rem 0;border-top:1px solid var(--k-line);color:var(--k-mut);font-size:.62rem}
+/* topo */
+.amain{min-width:0;display:flex;flex-direction:column}
+.tbar{display:flex;align-items:center;gap:.6rem;padding:.7rem 1rem;background:#fff;border-bottom:1px solid var(--k-line)}
+.sel{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .7rem;border-radius:9px;background:#F1F5F7;font-size:.72rem;font-weight:500;white-space:nowrap;min-width:0}
+.sel .chv{width:.9em;height:.9em;color:var(--k-mut)}
+.sel .pin{color:#E11D48}
+.pro{font-size:.56rem;font-weight:700;padding:.1rem .35rem;border-radius:4px;background:#D9F2EB;color:var(--k-teal2)}
+.tsp{flex:1}
+.sbx{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border-radius:9px;border:1px solid #F2C94C;background:#FFFCF2;font-size:.7rem;white-space:nowrap}
+.sbx .ico{color:var(--k-teal2)}
+.sbx u{font-weight:600;text-decoration-color:var(--k-org)}
+.ib{position:relative;display:grid;place-items:center;width:32px;height:32px;color:#475569;font-size:1.05rem}
+.ib i{position:absolute;top:4px;right:6px;width:7px;height:7px;border-radius:50%;background:#EF4444;animation:ping2 2.2s ease-out infinite}
+@keyframes ping2{0%{box-shadow:0 0 0 0 rgba(239,68,68,.55)}100%{box-shadow:0 0 0 8px rgba(239,68,68,0)}}
+.gbtn{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .85rem;border-radius:9px;background:var(--k-teal);color:#fff;font-size:.72rem;font-weight:600;white-space:nowrap}
+/* conteúdo */
+.acont{display:grid;gap:.9rem;padding:1rem}
+.hb{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem 1.4rem;padding:1.25rem 1.4rem;border-radius:14px;color:#fff;background:linear-gradient(100deg,#07625A 0%,#0A4B4C 45%,#0B1B2E 100%)}
+.hb-t{flex:1 1 360px;min-width:0}
+.hb-k{display:flex;align-items:center;gap:.5rem;font-size:.62rem;font-weight:700;letter-spacing:.06em;color:#5EEAD4}
+.hb-k i{flex:none;width:6px;height:6px;border-radius:50%;background:#34D399;animation:ping 2.4s ease-out infinite}
+.hb-h{margin:.45rem 0 .35rem;font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.15;font-weight:800;letter-spacing:-.02em}
+.hb-s{max-width:64ch;color:#CDE7E3;font-size:.72rem}
+.hb-s b{color:#fff}
+.hb-b{display:flex;flex-wrap:wrap;gap:.5rem}
+.hb-b span{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .8rem;border-radius:9px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);font-size:.72rem;font-weight:600;white-space:nowrap}
+.hb-b span.f{background:#10A593;border-color:#10A593}
+.alrt{display:flex;align-items:center;gap:.9rem;padding:.8rem 1rem;border-radius:12px;background:#FFFBEB;border:1px solid #FCE7A6;font-size:.7rem}
+.alrt>div{flex:1;min-width:0}
+.al-i{display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:50%;background:#FEF3C7;color:#D97706;font-size:1.15rem}
+.alrt b{display:block;color:#7C2D12;font-size:.76rem}
+.alrt p{margin-top:.1rem;color:#B45309}
+.al-b{flex:none;padding:.55rem .9rem;border-radius:8px;background:#D9560F;color:#fff;font-size:.72rem;font-weight:700;white-space:nowrap}
+.kcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.kc{display:grid;grid-template-columns:minmax(0,1fr);gap:.65rem;min-width:0;padding:1rem 1.1rem;border-radius:14px;background:#fff;border:1px solid var(--k-line)}
+.kc-h{display:flex;align-items:center;justify-content:space-between;gap:.5rem;color:#475569;font-size:.64rem;font-weight:600;letter-spacing:.05em}
+.ci{display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:9px;font-size:1rem}
+.ci.kt{background:#DDF3EC;color:var(--k-teal2)}.ci.ko{background:#FEEBD5;color:var(--k-org)}.ci.kb{background:#DCE8FE;color:var(--k-blue)}
+.kc-v{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.kc-v b{font-size:1.9rem;line-height:1;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.kc-v small{font-size:.7rem;font-weight:500}
+.kt{color:var(--k-teal2)}.ko{color:var(--k-org)}.kb{color:var(--k-blue)}
+.kc-f{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.3rem .6rem;padding-top:.65rem;border-top:1px solid #EEF2F5;color:var(--k-mut);font-size:.64rem}
+.kc-f span:first-child{min-width:0}
+.klk{font-weight:600;white-space:nowrap}
+.pnls{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:.8rem}
+.kp{min-width:0;padding:1.1rem 1.2rem;border-radius:14px;background:#fff;border:1px solid var(--k-line)}
+.kp-h{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:.4rem .8rem;margin-bottom:1rem;font-size:.7rem}
+.kp-h b{display:block;font-size:.86rem}
+.kp-h small{display:block;color:var(--k-mut);font-size:.66rem}
+.bars{display:grid;gap:.75rem}
+.br-t{display:flex;justify-content:space-between;gap:.8rem;font-size:.72rem;font-weight:600}
+.br-t code{font:400 .66rem ui-monospace,Menlo,Consolas,monospace;color:#64748B;white-space:nowrap}
+.br-b{height:6px;margin-top:.3rem;border-radius:6px;background:#EDF1F4}
+.br-b i{display:block;height:100%;width:var(--w);border-radius:6px;background:var(--k-teal)}
+.app.in .br-b i{animation:barin 1.3s cubic-bezier(.2,.9,.3,1) both}
+.bars li:nth-child(2) i{animation-delay:.1s!important}.bars li:nth-child(3) i{animation-delay:.2s!important}.bars li:nth-child(4) i{animation-delay:.3s!important}.bars li:nth-child(5) i{animation-delay:.4s!important}
+@keyframes barin{from{width:0}}
+.rh{display:flex;align-items:center;gap:.5rem;color:#DC2626}
+.rh b{color:var(--k-ink)}
+.rk{display:grid;gap:.6rem}
+.rk li{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.7rem .85rem;border-radius:10px;border:1px solid var(--k-line);background:#FAFBFC}
+.rk b{display:block;font-size:.74rem}
+.rk small{display:block;color:var(--k-mut);font-size:.64rem}
+.bd{display:grid;place-items:center;flex:none;min-width:24px;height:24px;border-radius:99px;font-style:normal;font-size:.7rem;font-weight:700}
+.bd.g{background:#DDF5E8;color:#15803D}.bd.y{background:#FEF3C7;color:#B45309}.bd.r{background:#FEE2E2;color:#B91C1C}
+@media (max-width:1020px){
+  .abody{grid-template-columns:1fr}
+  .side{display:none}
+  .kcards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pnls{grid-template-columns:1fr}
+  .tbar .unit{display:none}
+}
+@media (max-width:640px){
+  .atop .ttl{display:none}
+  .atop .live{margin-left:0}
+  .kcards{grid-template-columns:1fr}
+  .sbx,.gbtn,.ib.moon{display:none}
+  .alrt{flex-wrap:wrap}
+  .al-b{width:100%;text-align:center}
+  .hb-b span{flex:1 1 auto;justify-content:center}
+  .br-t{flex-wrap:wrap;gap:.1rem .8rem}
+}
+
+/* ---------- como funciona ---------- */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:clamp(2.2rem,4vw,3.5rem)}
+.steps::before,.steps::after{content:"";position:absolute;top:27px;left:28px;right:calc((100% - 4rem)/3 - 28px);height:2px;border-radius:2px}
+.steps::before{background:var(--ln2)}
+.steps::after{background:var(--g);box-shadow:0 0 14px rgba(0,212,255,.6);transform:scaleX(0);transform-origin:left;transition:transform 1.6s ease .25s}
+.steps.in::after{transform:scaleX(1)}
+.steps li{position:relative;z-index:1;min-width:0}
+.sn{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);font-weight:800;font-size:1rem;color:var(--cyan);box-shadow:0 0 28px -4px rgba(0,212,255,.55)}
+.steps h3{margin:1.4rem 0 .5rem;font-size:1.35rem;letter-spacing:-.025em}
+.steps p{color:var(--mut);max-width:34ch}
+
+/* ---------- diferenciais ---------- */
+.dfl{margin-top:clamp(2rem,4vw,3.2rem);border-bottom:1px solid var(--ln2)}
+.dfl li{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1.5rem;align-items:baseline;padding:1.5rem 0;border-top:1px solid var(--ln2);transition:padding-left .35s ease,background .35s ease}
+.dfl li:hover{padding-left:1rem;background:linear-gradient(90deg,rgba(0,212,255,.08),transparent 70%)}
+.dfl h3{font-size:clamp(1.25rem,2.4vw,1.7rem);letter-spacing:-.03em}
+.dfl p{color:var(--mut);max-width:52ch}
+
+/* ---------- prova social ---------- */
+.proof{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,4vw,4rem);align-items:center;padding:clamp(1.8rem,4vw,3.4rem);border-radius:28px;border:1px solid var(--ln2);background:radial-gradient(60% 90% at 0% 0%,rgba(37,99,235,.2),transparent 70%),var(--bg2)}
+.proof .big{margin-top:1.4rem;font-size:clamp(1.05rem,1.8vw,1.25rem);color:#CBD5E1;max-width:48ch}
+.modl{display:inline-block;margin-top:1.8rem;opacity:.9;transition:opacity .2s}
+.modl:hover{opacity:1}
+.modl img{height:30px;width:auto}
+.slots{display:grid;gap:1rem}
+.slot{position:relative;padding:1.4rem 1.5rem;border-radius:18px;border:1.5px dashed var(--ln2);overflow:hidden}
+.slot::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(0,212,255,.07) 50%,transparent 65%);transform:translateX(-100%);animation:sheen 6s ease-in-out infinite}
+.slot:nth-child(2)::before{animation-delay:-3s}
+@keyframes sheen{to{transform:translateX(100%)}}
+.slot b{display:block;font-size:1.05rem}
+.slot p{margin-top:.3rem;color:var(--mut);font-size:.93rem}
+
+/* ---------- FAQ ---------- */
+.faq-w{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.faq-w .h2{max-width:14ch}
+.qa{border-top:1px solid var(--ln2)}
+.qa:last-child{border-bottom:1px solid var(--ln2)}
+.q{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;width:100%;padding:1.25rem 0;background:none;border:0;color:var(--fg);font:600 1.08rem/1.35 var(--font);text-align:left;cursor:pointer;transition:color .2s}
+.q:hover{color:var(--cyan)}
+.pm{position:relative;flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--ln2);transition:background .3s,border-color .3s}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:2px;margin:-1px 0 0 -5px;border-radius:2px;background:currentColor;transition:transform .3s}
+.pm::after{transform:rotate(90deg)}
+.qa.open .pm{background:var(--g);border-color:transparent;color:#03101e}
+.qa.open .pm::after{transform:rotate(0)}
+.ans{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .4s ease,visibility .4s}
+.qa.open .ans{grid-template-rows:1fr;visibility:visible}
+.ans>div{overflow:hidden}
+.ans p{padding:0 2.6rem 1.4rem 0;color:var(--mut);max-width:58ch}
+
+/* ---------- CTA final ---------- */
+.ctab{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:clamp(3rem,8vw,6.5rem) clamp(1.2rem,4vw,3rem);border-radius:32px;border:1px solid rgba(0,212,255,.3);background:linear-gradient(160deg,#0C1B34,#071120)}
+.ctab::before{content:"";position:absolute;inset:-30%;z-index:-1;background:radial-gradient(35% 40% at 20% 30%,rgba(37,99,235,.55),transparent 70%),radial-gradient(35% 40% at 80% 25%,rgba(0,212,255,.35),transparent 70%),radial-gradient(40% 40% at 55% 100%,rgba(22,224,189,.3),transparent 70%);animation:aur 18s ease-in-out infinite alternate}
+.ctab::after{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent);mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent)}
+.ctab .h2{margin-inline:auto;max-width:18ch;font-size:clamp(2.1rem,5.6vw,4.2rem)}
+.ctab .lede{margin:1.4rem auto 2.4rem;color:#B7C4D8}
+
+/* ---------- footer ---------- */
+.ftr{padding:3.2rem 0 2.4rem;border-top:1px solid var(--ln)}
+.ft{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:2rem}
+.ft img.fl{height:34px;width:auto}
+.ft .sig{margin-top:1rem;color:var(--mut)}
+.ft h4{font-size:.9rem;margin-bottom:.8rem;color:var(--fg)}
+.ft ul{display:grid;gap:.5rem}
+.ft li a{color:var(--mut);text-decoration:none;transition:color .2s}
+.ft li a:hover{color:var(--cyan)}
+.bywrap{display:inline-flex;align-items:center;gap:.7rem;margin-top:1.4rem;color:var(--mut);font-size:.9rem}
+.bywrap img{height:24px;width:auto;opacity:.9}
+.cp{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 1.5rem;margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--ln);color:var(--mut);font-size:.88rem}
+.cp a{color:var(--mut)}
+
+/* ---------- botão flutuante do WhatsApp e aviso ---------- */
+.fab{position:fixed;z-index:40;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:linear-gradient(145deg,#25D366,#128C7E);color:#fff;box-shadow:0 14px 34px -8px rgba(18,140,126,.8);opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity .4s,transform .4s}
+.fab.show{opacity:1;transform:none;pointer-events:auto}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:fabp 3.2s ease-out infinite}
+@keyframes fabp{from{transform:scale(1);opacity:.7}to{transform:scale(1.6);opacity:0}}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:30px;height:30px}
+.toast{position:fixed;z-index:70;left:50%;bottom:max(90px,calc(env(safe-area-inset-bottom,0px) + 80px));max-width:min(92vw,420px);padding:.8rem 1.1rem;border-radius:14px;background:#142237;border:1px solid var(--ln2);box-shadow:0 20px 50px -15px #000;font-size:.9rem;text-align:center;opacity:0;transform:translate(-50%,12px);pointer-events:none;transition:opacity .3s,transform .3s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- revelar ao rolar ---------- */
+.js .rv{opacity:.3;transform:translateY(22px);transition:opacity .8s ease var(--d,0s),transform .8s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1020px){
+  .bento .bt{grid-column:span 6}
+  .bento .b1,.bento .b2,.bento .b7,.bento .b8{grid-column:span 12}
+  .prob{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .hg,.proof,.faq-w{grid-template-columns:1fr}
+  .vis{max-width:520px}
+  .burger{display:inline-flex}
+  .hdr .cta-d{display:none}
+  .nav{position:fixed;left:0;right:0;top:calc(var(--hh) + env(safe-area-inset-top,0px));margin:0;display:grid;gap:0;padding:.6rem max(20px,env(safe-area-inset-right,0px)) 1.4rem max(20px,env(safe-area-inset-left,0px));background:rgba(6,13,22,.985);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--ln2);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s,transform .3s,visibility .3s}
+  .nav.open{opacity:1;visibility:visible;transform:none}
+  .nav a{padding:1rem .2rem;font-size:1.15rem;border-radius:0;border-bottom:1px solid var(--ln);color:var(--fg)}
+  .nav a[aria-current="true"]::after{display:none}
+  .nav a[aria-current="true"]{color:var(--cyan)}
+  .nav .navcta{display:inline-flex;margin-top:1.2rem;border:0;padding:1rem 1.4rem;color:#03101e;font-size:1.05rem}
+  .steps{grid-template-columns:1fr;gap:2.2rem}
+  .steps::before,.steps::after{display:none}
+  .dfl li{grid-template-columns:1fr;gap:.4rem}
+  .ft{grid-template-columns:1fr 1fr}
+  .ft>div:first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  body{font-size:1rem}
+  .prob{grid-template-columns:1fr}
+  .bento .bt,.bento .b6{grid-column:span 12}
+  .acts .btn{width:100%}
+  .vis{aspect-ratio:1/1.12}
+  .map{inset:3% 0 8% 0}
+  .c1{left:0;top:20%}.c2{right:0}.c3{left:0}.c4{right:0;bottom:0}
+  .fi{padding:.6rem .75rem;font-size:.74rem}
+  .fi b{font-size:.84rem}
+  .ring{width:38px;height:38px}
+  .c4{display:none}
+  .ft{grid-template-columns:1fr}
+  .ans p{padding-right:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
 <body>
-<header class="top"><div class="wrap nav"><a class="brand" href="#inicio" aria-label="Ambu360 — início"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="brandg"><stop stop-color="#0e96a9"/><stop offset="1" stop-color="#90eaaa"/></linearGradient></defs><path d="M5 49 29 5h11L17 49Z" fill="#22c6bd"/><path d="M37 5 59 49H46L30 16Z" fill="url(#brandg)"/><path d="M31 28v16m-8-8h16" stroke="#e9fff6" stroke-width="4" stroke-linecap="round"/></svg><span>Ambu<strong>360</strong></span></a><button class="menu" aria-label="Abrir navegação" aria-expanded="false" onclick="let n=document.getElementById('links');let o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">☰</button><nav class="nav-links" id="links"><a href="#solucao">A solução</a><a href="#modulos">Módulos</a><a href="#diferenciais">Diferenciais</a><a href="#implantacao">Implantação</a><a href="#contato" class="pill">Solicitar apresentação ↗</a></nav></div></header>
-<main id="inicio">
-<section class="hero"><div class="wrap grid"><div><div class="eyebrow">TECNOLOGIA PARA GESTÃO DE AMBULÂNCIAS</div><h1>Sua operação.<br><em>Sob controle.</em></h1><p class="lead">Da escala das equipes à gestão financeira: uma plataforma criada para conectar todas as áreas da sua empresa de ambulâncias em uma operação mais inteligente.</p><div class="actions"><a class="btn primary" href="#contato">Solicitar apresentação ↗</a><a class="btn outline" href="#modulos">Explorar funcionalidades ↓</a></div><div class="stats"><div><b>Uma única plataforma</b>Para toda a operação</div><div><b>Estrutura modular</b>Conforme a sua empresa</div><div><b>Visão 360°</b>Decisões mais claras</div></div></div><div class="dashboard" aria-label="Representação ilustrativa do painel Ambu360"><div class="dashhead"><b>Ambu360 / Visão geral</b><span>● Operação online</span></div><div class="dashmain"><small>PAINEL GERENCIAL · EXEMPLO ILUSTRATIVO</small><h3>Um panorama completo.</h3><div class="kpis"><div><small>Ambulâncias</small><b>24</b><span>↗ Em operação</span></div><div><small>Plantões</small><b>86</b><span>↗ Escalados</span></div><div><small>Indicadores</small><b>98%</b><span>↗ Referência visual</span></div></div><div class="chart"><header><b>Performance operacional</b><span>Exemplo</span></header><svg viewBox="0 0 400 180"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#2bd2c0" stop-opacity=".3"/><stop offset="1" stop-color="#2bd2c0" stop-opacity="0"/></linearGradient></defs><path d="M0 145 Q48 133 90 109T176 119T258 70T328 79T400 29V180H0Z" fill="url(#fill)"/><path d="M0 145 Q48 133 90 109T176 119T258 70T328 79T400 29" stroke="#49e8c0" stroke-width="4" fill="none"/></svg></div></div></div></div></section>
-<section class="band"><div class="wrap"><span>MENOS PLANILHAS</span><span>MENOS RETRABALHO</span><strong>MAIS CONTROLE DA OPERAÇÃO</strong></div></section>
-<section class="section" id="solucao"><div class="wrap"><div class="head"><div><span class="tag">01 / O DESAFIO</span><h2>Uma empresa integrada.<br><em>Não dezenas de controles isolados.</em></h2></div><p>As operações de atendimento e remoção exigem organização constante. O Ambu360 foi pensado para reunir processos, equipes e resultados em um só lugar.</p></div><div class="problem"><article><span>↗</span><b>Escalas sem improviso</b><p>Uma visão mais clara de profissionais, plantões, alterações e necessidades operacionais.</p></article><article><span>▣</span><b>Frota e materiais visíveis</b><p>Informações para acompanhar veículos, manutenção, checklists e suprimentos.</p></article><article><span>◎</span><b>Gestão conectada ao financeiro</b><p>Mais contexto para analisar custos, contratos e resultados do negócio.</p></article></div></div></section>
-<section class="section light" id="modulos"><div class="wrap"><div class="head"><div><span class="tag">02 / ECOSSISTEMA AMBU360</span><h2>Tudo o que sua operação precisa.<br><em>Em um único lugar.</em></h2></div><p>Conheça a visão de módulos da plataforma. A disponibilização pública ocorrerá após conclusão e validação de cada funcionalidade.</p></div><div class="filters"><button class="filter active" data-filter="todos">Todos os módulos</button><button class="filter" data-filter="operacao">Operação</button><button class="filter" data-filter="gestao">Gestão</button><button class="filter" data-filter="inteligencia">Inteligência</button></div><div class="modules">
-<article class="module" data-group="operacao"><div class="symbol">▦</div><h3>Escalas e plantões</h3><p>Planejamento de jornadas, trocas, publicações e acompanhamento das equipes.</p></article>
-<article class="module" data-group="operacao"><div class="symbol">✚</div><h3>Frota e ambulâncias</h3><p>Cadastro de veículos, manutenções, pneus, abastecimentos e checklists.</p></article>
-<article class="module" data-group="operacao"><div class="symbol">▤</div><h3>Estoque e suprimentos</h3><p>Entradas, saídas, transferências e rastreabilidade de materiais.</p></article>
-<article class="module" data-group="gestao"><div class="symbol">◈</div><h3>Gestão financeira</h3><p>Contas, centros de custo, fluxo de caixa e indicadores financeiros.</p></article>
-<article class="module" data-group="gestao"><div class="symbol">▥</div><h3>Contratos e clientes</h3><p>Gestão de contratos, serviços, faturamento e relacionamento comercial.</p></article>
-<article class="module" data-group="operacao"><div class="symbol">♙</div><h3>Pessoas e documentos</h3><p>Cadastros, permissões, certificações, treinamentos e vencimentos.</p></article>
-<article class="module" data-group="operacao"><div class="symbol">◫</div><h3>Uniformes e EPIs</h3><p>Solicitações, entregas, devoluções, substituições e controle de itens.</p></article>
-<article class="module" data-group="operacao"><div class="symbol">⊞</div><h3>Atendimentos e eventos</h3><p>Planejamento de coberturas, recursos, equipes e execução operacional.</p></article>
-<article class="module" data-group="gestao"><div class="symbol">▧</div><h3>CRM e comercial</h3><p>Oportunidades, propostas, acompanhamento e renovação de contratos.</p></article>
-<article class="module" data-group="inteligencia"><div class="symbol">◉</div><h3>Dashboards e relatórios</h3><p>Indicadores de equipes, custos, frota e produtividade em um painel integrado.</p></article>
-<article class="module" data-group="inteligencia"><div class="symbol">✳</div><h3>Inteligência artificial</h3><p>Recursos planejados para análises, alertas e automações inteligentes.</p></article>
-<article class="module" data-group="inteligencia"><div class="symbol">⌘</div><h3>Multiempresa e portal</h3><p>Ambientes personalizados, multiunidades e acesso por perfil e organização.</p></article>
-</div></div></section>
-<section class="section" id="diferenciais"><div class="wrap split"><div><span class="tag">03 / POR QUE AMBU360</span><h2>Especializado na sua realidade.<br><em>Preparado para crescer.</em></h2><p class="lead">Uma plataforma planejada para o ritmo real das empresas de ambulâncias: equipes em campo, contratos exigentes, frota em movimento e decisões que precisam de informação confiável.</p><a class="btn primary" href="#contato">Conhecer o Ambu360 ↗</a></div><div class="features"><article><b>Gestão especializada</b><p>Estrutura pensada para as particularidades de remoções, eventos e operações de saúde.</p></article><article><b>Arquitetura modular</b><p>Módulos e permissões organizados de acordo com a operação de cada empresa.</p></article><article><b>Ambiente personalizado</b><p>Visão multiempresa com endereço próprio e separação de dados por organização.</p></article><article><b>Evolução contínua</b><p>Uma solução preparada para melhorias e novos recursos ao longo do tempo.</p></article></div></div></section>
-<section class="section how" id="implantacao"><div class="wrap"><span class="tag">04 / IMPLANTAÇÃO</span><h2>Da configuração à operação.<br><em>Acompanhamento de verdade.</em></h2><div class="steps"><article><span>01</span><h3>Diagnóstico</h3><p>Entendimento da estrutura, das equipes e dos processos da empresa.</p></article><article><span>02</span><h3>Parametrização</h3><p>Configuração das unidades, acessos, módulos e dados iniciais.</p></article><article><span>03</span><h3>Implantação</h3><p>Preparação e orientação das equipes para uso da plataforma.</p></article><article><span>04</span><h3>Evolução</h3><p>Acompanhamento e aperfeiçoamentos conforme a operação cresce.</p></article></div></div></section>
-<section class="section" id="perguntas"><div class="wrap faq"><span class="tag">05 / PERGUNTAS FREQUENTES</span><h2>O que você precisa saber.</h2><details><summary>O Ambu360 serve para empresas de diferentes portes?</summary><p>A proposta é uma estrutura modular, adaptável a operações menores ou com múltiplas bases e unidades.</p></details><details><summary>Posso utilizar só alguns módulos?</summary><p>O modelo prevê contratação e implantação por módulos, conforme necessidades e condições comerciais definidas no lançamento.</p></details><details><summary>Minha empresa terá um endereço personalizado?</summary><p>O projeto prevê ambientes individualizados, como suaempresa.ambu360.com.br, com controle de acesso e isolamento dos dados.</p></details><details><summary>Já posso contratar todos os módulos?</summary><p>O lançamento comercial acontecerá após a conclusão dos testes e validações; os recursos apresentados são a visão completa planejada.</p></details></div></section>
-<section class="contact" id="contato"><div class="wrap contactgrid"><div><span class="tag">06 / VAMOS CONVERSAR</span><h2>Pronto para ter uma<br><em>visão completa?</em></h2><p>Conheça o projeto Ambu360 e converse com a equipe sobre as necessidades da sua empresa. O lançamento comercial ocorrerá após a validação da plataforma.</p></div><div class="formcard"><h3>Solicitar apresentação</h3><p>Vamos preparar sua mensagem e abrir o WhatsApp comercial.</p><form id="lead"><label for="name">Seu nome</label><input id="name" required maxlength="100" autocomplete="name" placeholder="Nome completo"><label for="company">Empresa</label><input id="company" required maxlength="100" placeholder="Nome da empresa"><label for="contact">Telefone / WhatsApp</label><input id="contact" required maxlength="30" placeholder="(00) 00000-0000"><label for="interest">Principal interesse</label><select id="interest"><option>Conhecer a plataforma</option><option>Agendar uma demonstração</option><option>Falar sobre implantação</option><option>Parceria comercial</option></select><button type="submit" class="btn primary">Preparar contato ↗</button><p class="status" id="status" role="status"></p></form></div></div></section>
-</main><footer class="footer"><div class="wrap"><div class="row"><div><a class="brand" href="#inicio">Ambu<strong>360</strong></a><p>Gestão para quem mantém a operação em movimento.</p></div><div class="links"><a href="#modulos">Módulos</a><a href="#implantacao">Implantação</a><a href="#contato">Contato</a></div></div><div class="footline"><span>© <span id="year"></span> Ambu360. Todos os direitos reservados.</span><span>Uma solução da Modtrax.</span></div></div></footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol><symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol><symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 010 8.4M7.8 16.2a6 6 0 010-8.4M19 5a10 10 0 010 14M5 19A10 10 0 015 5"/></symbol><symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></symbol><symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.4 4.5L16 3a4 4 0 01-8 0L3.6 4.5 1 9l3.5 2 .5 10h14l.5-10L23 9z"/></symbol><symbol id="i-dollar" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 000-7.8z"/></symbol><symbol id="i-clip" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2M12 11v6M9 14h6"/></symbol><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9z"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c3 3 9 3 12 0v-5"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></symbol><symbol id="i-bld" viewBox="0 0 24 24"><path d="M3 21h18M6 21V5a1 1 0 011-1h6a1 1 0 011 1v16M14 9h3a1 1 0 011 1v11M9 8h2M9 12h2M9 16h2"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></symbol><symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="i-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></symbol><symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></symbol><symbol id="i-login" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></symbol><symbol id="i-warn" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0zM12 9v4M12 17h.01"/></symbol><symbol id="i-amb" viewBox="0 0 24 24"><path d="M2 16V7h11v9M13 10h4l4 3v3h-8"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/><path d="M7.5 9v4M5.5 11h4"/></symbol></svg>
+
+<!-- ======================= 1. HEADER FIXO ======================= -->
+<header class="hdr" id="topo">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Ambu360, página inicial"><img src="data:image/webp;base64,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" alt="Ambu360"></a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#plataforma">Plataforma</a>
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#faq">Perguntas frequentes</a>
+      <a class="btn navcta" href="#contato" data-wa data-evt="cta_menu">Agendar demonstração</a>
+    </nav>
+    <a class="btn sm cta-d" href="#contato" data-wa data-evt="cta_header">Agendar demonstração</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu"><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- ======================= 2. HERO ======================= -->
+<section class="hero" id="inicio">
+  <div class="aurw" data-depth="-0.6" aria-hidden="true"><i class="aur"></i></div>
+  <div class="wrap hg">
+    <div class="hc">
+      <p class="kick"><i></i>GESTÃO INTELIGENTE PARA OPERAÇÕES MÉDICAS</p>
+      <h1>Sua operação não pode parar. <span class="gt">Sua gestão também não.</span></h1>
+      <p class="lede">Centralize ambulâncias, equipes, escalas, estoque, contratos e financeiro em uma plataforma desenvolvida para a gestão de serviços médicos e operações de emergência.</p>
+      <div class="acts">
+        <a class="btn lg" href="#contato" data-wa data-evt="hero_whatsapp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z"/><path d="M9.3 8.6c.2-.4.6-.4.8-.1l.8 1.3c.1.2.1.4 0 .6l-.5.7c.6 1.1 1.5 2 2.7 2.6l.7-.5c.2-.1.4-.1.6 0l1.3.8c.3.2.3.6 0 .9-.5.7-1.4 1-2.2.8-2.8-.8-4.8-2.8-5.5-5.4-.1-.6.1-1.2.3-1.7z" fill="currentColor" stroke="none"/></svg>
+          Conhecer o Ambu360 pelo WhatsApp
+        </a>
+        <a class="btn ghost lg" href="#plataforma" data-evt="hero_explorar">Explorar a plataforma</a>
+      </div>
+      <p class="micro">Telas e números desta página são demonstrativos.</p>
+    </div>
+
+    <div class="vis" aria-hidden="true">
+      <div class="map" data-depth="0.45">
+        <svg class="mapsvg" viewBox="0 0 520 480" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="hdots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#27457A"/></pattern>
+            <radialGradient id="hfade" cx="50%" cy="48%" r="68%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+            <mask id="hmask"><rect width="520" height="480" fill="url(#hfade)"/></mask>
+            <linearGradient id="hroute" x1="0" x2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#00D4FF"/></linearGradient>
+          </defs>
+          <rect width="520" height="480" fill="url(#hdots)" mask="url(#hmask)"/>
+          <g stroke="#1E3A64" stroke-width="1.3" fill="none" mask="url(#hmask)">
+            <path d="M-10 330 C120 300 200 370 320 325 S470 260 540 285"/>
+            <path d="M60 -10 C95 130 40 240 110 335 S200 450 190 500"/>
+            <path d="M255 -10 C265 100 335 160 325 255 S405 375 455 500"/>
+            <path d="M-10 130 C100 155 180 100 285 145 S440 155 540 100"/>
+            <path d="M385 -10 C395 70 445 90 445 175"/>
+          </g>
+          <path id="rt1" d="M110 335 C170 280 215 280 265 225 S345 160 405 118" fill="none" stroke="url(#hroute)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3 7" class="route"/>
+          <path id="rt2" d="M450 380 C405 345 335 335 305 275 S235 185 200 132" fill="none" stroke="url(#hroute)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3 7" class="route"/>
+          <g fill="#0A1424" stroke="#00D4FF" stroke-width="1.6">
+            <circle cx="110" cy="335" r="9"/><circle cx="450" cy="380" r="9"/>
+          </g>
+          <g fill="#00D4FF"><rect x="108.5" y="330" width="3" height="10" rx="1"/><rect x="105" y="333.5" width="10" height="3" rx="1"/><rect x="448.5" y="375" width="3" height="10" rx="1"/><rect x="445" y="378.5" width="10" height="3" rx="1"/></g>
+          <g><circle cx="405" cy="118" r="7" fill="#16E0BD"/><circle cx="405" cy="118" r="7" fill="none" stroke="#16E0BD" stroke-width="1.6" class="ring-p"/></g>
+          <g><circle cx="200" cy="132" r="7" fill="#16E0BD"/><circle cx="200" cy="132" r="7" fill="none" stroke="#16E0BD" stroke-width="1.6" class="ring-p" style="animation-delay:-1.3s"/></g>
+          <g>
+            <circle r="9" fill="#F8FAFC"/><rect x="-1.6" y="-5" width="3.2" height="10" rx="1" fill="#2563EB"/><rect x="-5" y="-1.6" width="10" height="3.2" rx="1" fill="#2563EB"/>
+            <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#rt1"/></animateMotion>
+          </g>
+          <g>
+            <circle r="9" fill="#F8FAFC"/><rect x="-1.6" y="-5" width="3.2" height="10" rx="1" fill="#16A34A"/><rect x="-5" y="-1.6" width="10" height="3.2" rx="1" fill="#16A34A"/>
+            <animateMotion dur="11s" begin="-4s" repeatCount="indefinite"><mpath href="#rt2"/></animateMotion>
+          </g>
+        </svg>
+        <span class="demo">Dados demonstrativos</span>
+      </div>
+
+      <div class="fc c1" data-depth="1.1"><div class="fi">
+        <svg class="ring" viewBox="0 0 44 44"><circle class="rb" cx="22" cy="22" r="17"/><circle class="rf" cx="22" cy="22" r="17" pathLength="100" style="--v:80"/></svg>
+        <div><small>Disponibilidade</small><b>8 de 10</b><em>ambulâncias</em></div>
+      </div></div>
+      <div class="fc c2" data-depth="0.8"><div class="fi">
+        <small>Chamado em curso</small><b>Remoção inter-hospitalar</b>
+        <div class="pbar"><i></i></div><em>Equipe a caminho</em>
+      </div></div>
+      <div class="fc c3" data-depth="1.3"><div class="fi">
+        <small>Escala de hoje</small>
+        <div class="av"><span>AL</span><span>MR</span><span>JC</span><span>+5</span></div>
+        <em>Plantão diurno</em>
+      </div></div>
+      <div class="fc c4" data-depth="0.9"><div class="fi">
+        <small>Fluxo do mês</small>
+        <div class="mb"><i style="--h:40%;--k:0"></i><i style="--h:58%;--k:1"></i><i style="--h:48%;--k:2"></i><i style="--h:72%;--k:3"></i><i style="--h:64%;--k:4"></i><i style="--h:90%;--k:5"></i></div>
+        <b class="up">+12%</b>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 3. O PROBLEMA ======================= -->
+<section class="sec" id="problema">
+  <div class="wrap">
+    <h2 class="h2 rv">Sua equipe salva tempo. <span class="gt">Sua gestão também deveria.</span></h2>
+    <div class="prob">
+      <article class="pb rv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M3 15h18M9 3v18"/></svg><h3>Escalas em planilhas</h3><p>Plantões e trocas viram arquivos difíceis de manter atualizados.</p></article>
+      <article class="pb rv"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="9" r="2.5"/><circle cx="11" cy="18" r="2.5"/></svg><h3>Informação espalhada</h3><p>Cada área usa uma ferramenta e ninguém enxerga o todo.</p></article>
+      <article class="pb rv"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg><h3>Frota sem visão clara</h3><p>Difícil saber, na hora, quais ambulâncias estão disponíveis.</p></article>
+      <article class="pb rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg><h3>Documentos descentralizados</h3><p>Manutenção, habilitações e vencimentos em pastas diferentes.</p></article>
+      <article class="pb rv"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v5c0 1.7 3.1 3 7 3s7-1.3 7-3V7M5 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></svg><h3>Contratos e custos soltos</h3><p>Acompanhar o que cada contrato rende e custa exige esforço manual.</p></article>
+      <article class="pb rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14l-3 3a3.5 3.5 0 11-5-5l3-3"/><path d="M14 10l3-3a3.5 3.5 0 115 5l-3 3"/><path d="M9 4v3M4 9h3M15 20v-3M20 15h-3"/></svg><h3>Operação e financeiro desconectados</h3><p>Os números chegam tarde, quando a decisão já passou.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 4. A PLATAFORMA ======================= -->
+<section class="sec" id="plataforma" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="h2 rv">Uma operação. Uma plataforma. <span class="gt">Visão 360°.</span></h2>
+      <p class="lede rv">Do despacho ao financeiro, cada área da sua empresa conectada em um só lugar.</p>
+    </div>
+    <div class="bento">
+      <article class="bt b1 rv">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8.5" opacity=".5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/></svg>
+        <h3>Central de Operações e Despacho</h3>
+        <p>Acompanhe chamados, equipes e ambulâncias em uma única tela e conduza cada ocorrência do início ao fim.</p>
+        <ul class="mini" aria-hidden="true">
+          <li><i class="dot a"></i>Remoção inter-hospitalar<span>Em rota</span></li>
+          <li><i class="dot d"></i>Cobertura de evento<span>No local</span></li>
+          <li><i class="dot m"></i>Transporte simples<span>Concluído</span></li>
+        </ul>
+      </article>
+      <article class="bt b2 rv">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16V7h11v9M13 10h4l4 3v3h-8"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/><path d="M7.5 9v4M5.5 11h4"/></svg>
+        <h3>Gestão de Ambulâncias e Frota</h3>
+        <p>Cadastro, status e documentos de cada veículo, com visão clara de quem está disponível.</p>
+        <div class="chips" aria-hidden="true"><span class="chip"><i class="dot d"></i>Disponível</span><span class="chip"><i class="dot a"></i>Em atendimento</span><span class="chip"><i class="dot r"></i>Retornando</span><span class="chip"><i class="dot m"></i>Manutenção</span></div>
+      </article>
+      <article class="bt b3 rv">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M13 14h3M8 17.5h3"/></svg>
+        <h3>Escalas e Plantões</h3>
+        <p>Monte e ajuste escalas sem planilhas, com equipes e turnos sempre atualizados.</p>
+      </article>
+      <article class="bt b4 rv">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+        <h3>Colaboradores e Habilitações</h3>
+        <p>Equipes, funções e habilitações organizadas, com atenção aos vencimentos.</p>
+      </article>
+      <article class="bt b5 rv">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-5 9 5v9l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v9"/></svg>
+        <h3>Estoque e Almoxarifado</h3>
+        <p>Materiais e insumos sob controle, da entrada ao consumo na operação.</p>
+      </article>
+      <article class="bt b6 rv">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Uniformes e EPIs</h3>
+        <p>Controle a entrega e a reposição de uniformes e equipamentos de proteção.</p>
+      </article>
+      <article class="bt b7 rv">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><rect x="5" y="12" width="3" height="8" rx="1"/><rect x="10.5" y="7" width="3" height="13" rx="1"/><rect x="16" y="3" width="3" height="17" rx="1"/></svg>
+        <h3>Gestão Financeira</h3>
+        <p>Receitas e custos conectados à operação, para enxergar o resultado com mais clareza.</p>
+        <div class="fbars" aria-hidden="true"><i style="--h:34%"></i><i style="--h:52%"></i><i style="--h:44%"></i><i style="--h:68%"></i><i style="--h:58%"></i><i style="--h:80%"></i><i style="--h:72%"></i><i style="--h:100%"></i></div>
+      </article>
+      <article class="bt b8 rv">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h4"/></svg>
+        <h3>Clientes, Contratos e Planos</h3>
+        <p>Contratos, planos e clientes organizados, com o histórico à mão.</p>
+      </article>
+    </div>
+    <p class="note rv">Os módulos e recursos disponíveis dependem da configuração e da etapa de desenvolvimento de cada solução. A equipe da MODTRAX detalha o escopo na apresentação comercial.</p>
+  </div>
+</section>
+
+<!-- ======================= 5. DASHBOARD EM DESTAQUE ======================= -->
+<section class="sec" id="funcionalidades" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2 rv">Toda a sua operação. <span class="gt">Na palma da mão.</span></h2>
+    <p class="lede rv" style="margin-top:1.2rem">Uma interface para acompanhar equipe, habilitações, frota e estoque sem trocar de ferramenta. Exemplo ilustrativo, com dados fictícios.</p>
+
+    <div class="app io" role="img" aria-label="Demonstração ilustrativa do painel executivo do Ambu360, com quadro funcional, habilitações, frota, estoque e conformidade. Todos os dados são fictícios.">
+      <div class="atop"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">Painel executivo · exemplo ilustrativo</span><span class="live"><i></i>Demonstração · dados fictícios</span></div>
+      <div class="abody">
+        <aside class="side">
+          <div class="sb-head"><span class="sb-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-amb"/></svg></span><div><b>Ambu360</b><small>AmbuLife 360 (SP)</small></div><svg class="ico chev" viewBox="0 0 24 24"><use href="#i-left"/></svg></div>
+          <div class="sb-search"><svg class="ico" viewBox="0 0 24 24"><use href="#i-search"/></svg>Buscar módulos (ex: RH, Frota...)</div>
+          <ul class="sb-nav"><li class="on"><svg class="ico" viewBox="0 0 24 24"><use href="#i-activity"/></svg><span>Dashboard Executivo</span><em class="ph">FASE 1</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-users"/></svg><span>Colaboradores e RH</span><em class="ph">FASE 1</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-doc"/></svg><span>Documentos e Habilitações</span><em class="ph">FASE 1</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-cal"/></svg><span>Escalas e Plantões</span><em class="ph">FASE 3</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-truck"/></svg><span>Frota e Ambulâncias</span><em class="ph">FASE 4</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-radio"/></svg><span>Central de Operações</span><em class="ph">FASE 5</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-box"/></svg><span>Estoque e Almoxarifado</span><em class="ph">FASE 5</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-shirt"/></svg><span>Uniformes e EPIs</span><em class="ph">FASE 5</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-dollar"/></svg><span>Financeiro Empresarial</span><em class="ph">FASE 6</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-file"/></svg><span>Clientes, Contratos e Planos</span><em class="ph">FASE 6</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-heart"/></svg><span>Planos e Associados</span><em class="ph">FASE 6</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-clip"/></svg><span>Prontuário e Clínico</span><em class="ph g">Fase 7</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-wrench"/></svg><span>Equipamentos Médicos</span><em class="ph g">Fase 7</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-cap"/></svg><span>Treinamentos e Cursos</span><em class="ph g">Fase 7</em></li><li><svg class="ico" viewBox="0 0 24 24"><use href="#i-cart"/></svg><span>Compras e Fornecedores</span><em class="ph g">Fase 5</em></li></ul>
+          <div class="sb-foot"><span>SaaS Ambu360 v1.0</span><span>Fase 1 Ativa</span></div>
+        </aside>
+        <div class="amain">
+          <div class="tbar">
+            <span class="sel"><svg class="ico" viewBox="0 0 24 24"><use href="#i-bld"/></svg>AmbuLife 360 (SP)<b class="pro">PRO</b><svg class="ico chv" viewBox="0 0 24 24"><use href="#i-down"/></svg></span>
+            <span class="sel unit"><svg class="ico pin" viewBox="0 0 24 24"><use href="#i-pin"/></svg>Base Central - Av. Paulista<svg class="ico chv" viewBox="0 0 24 24"><use href="#i-down"/></svg></span>
+            <span class="tsp"></span>
+            <span class="sbx"><svg class="ico" viewBox="0 0 24 24"><use href="#i-shield"/></svg>[SANDBOX] <u>Admin Empresa</u><svg class="ico chv" viewBox="0 0 24 24"><use href="#i-down"/></svg></span>
+            <span class="ib"><svg class="ico" viewBox="0 0 24 24"><use href="#i-bell"/></svg><i></i></span>
+            <span class="ib moon"><svg class="ico" viewBox="0 0 24 24"><use href="#i-moon"/></svg></span>
+            <span class="gbtn"><svg class="ico" viewBox="0 0 24 24"><use href="#i-login"/></svg>Conectar Google</span>
+          </div>
+          <div class="acont">
+            <div class="hb">
+              <div class="hb-t">
+                <p class="hb-k"><i></i>CENTRO DE CONTROLE AMBU360 — AMBULIFE 360 (SP)</p>
+                <p class="hb-h">Visão Operacional &amp; Conformidade Regulatória</p>
+                <p class="hb-s">Unidade ativa: <b>Base Central - Av. Paulista</b>. Monitoramento em tempo real de escalas, prontidão de viaturas e vigência de habilitações profissionais (CNH, EAR, CRM e COREN).</p>
+              </div>
+              <div class="hb-b"><span class="f"><svg class="ico" viewBox="0 0 24 24"><use href="#i-cal"/></svg>03. Escalas e Plantões</span><span><svg class="ico" viewBox="0 0 24 24"><use href="#i-users"/></svg>Colaboradores</span><span><svg class="ico" viewBox="0 0 24 24"><use href="#i-doc"/></svg>Auditoria</span></div>
+            </div>
+            <div class="alrt">
+              <span class="al-i"><svg class="ico" viewBox="0 0 24 24"><use href="#i-warn"/></svg></span>
+              <div><b>Atenção à Matriz Legal: 1 documento(s) vencido(s) e 1 a vencer nos próximos 30 dias</b><p>Colaboradores com documentos vencidos sofrem bloqueio preventivo automático em escalas operacionais de acordo com a Resolução CONTRAN e exigências do CFM/COREN.</p></div>
+              <span class="al-b">Regularizar Pendências →</span>
+            </div>
+            <div class="kcards">
+              <div class="kc"><div class="kc-h"><span>QUADRO FUNCIONAL</span><i class="ci kt"><svg class="ico" viewBox="0 0 24 24"><use href="#i-users"/></svg></i></div><div class="kc-v"><b><span data-count data-to="6">6</span></b><small class="kt">100% ativos</small></div><div class="kc-f"><span>6 cadastrados no total</span><span class="klk kt">Gerenciar →</span></div></div>
+              <div class="kc"><div class="kc-h"><span>HABILITAÇÕES &amp; CNH</span><i class="ci ko"><svg class="ico" viewBox="0 0 24 24"><use href="#i-doc"/></svg></i></div><div class="kc-v"><b><span data-count data-to="2">2</span></b><small class="ko">alertas ativos</small></div><div class="kc-f"><span>1 vencidos / 1 a vencer</span><span class="klk kb">Ver matriz →</span></div></div>
+              <div class="kc"><div class="kc-h"><span>FROTA OPERACIONAL</span><i class="ci kb"><svg class="ico" viewBox="0 0 24 24"><use href="#i-truck"/></svg></i></div><div class="kc-v"><b><span data-count data-to="8">8</span> / 10</b><small class="kb">Disponíveis</small></div><div class="kc-f"><span>2 em revisão preventiva</span><span class="klk kb">Módulo 04 →</span></div></div>
+              <div class="kc"><div class="kc-h"><span>ESTOQUE &amp; INSUMOS APH</span><i class="ci kt"><svg class="ico" viewBox="0 0 24 24"><use href="#i-box"/></svg></i></div><div class="kc-v"><b>Módulo 05</b><small class="kt">Operacional</small></div><div class="kc-f"><span>Medicamentos, lotes e kits de viaturas</span><span class="klk kt">Acessar Almoxarifado →</span></div></div>
+            </div>
+            <div class="pnls">
+              <div class="kp"><div class="kp-h"><div><b>Distribuição Operacional por Cargo</b><small>Composição do efetivo com exigências legais parametrizadas</small></div><span class="klk kt">Ver todos os colaboradores →</span></div><ul class="bars"><li><div class="br-t"><span>Condutor de Ambulância de Emergência</span><code>2 profissional(is) (33%)</code></div><div class="br-b"><i style="--w:33%"></i></div></li><li><div class="br-t"><span>Médico Regulador / Intervencionista</span><code>1 profissional(is) (17%)</code></div><div class="br-b"><i style="--w:17%"></i></div></li><li><div class="br-t"><span>Enfermeiro de Emergência e Resgate</span><code>1 profissional(is) (17%)</code></div><div class="br-b"><i style="--w:17%"></i></div></li><li><div class="br-t"><span>Técnico de Enfermagem Socorrista</span><code>1 profissional(is) (17%)</code></div><div class="br-b"><i style="--w:17%"></i></div></li><li><div class="br-t"><span>Operador de Rádio e Central (TARM)</span><code>1 profissional(is) (17%)</code></div><div class="br-b"><i style="--w:17%"></i></div></li></ul></div>
+              <div class="kp"><div class="kp-h"><div class="rh"><svg class="ico" viewBox="0 0 24 24"><use href="#i-shield"/></svg><b>Conformidade &amp; Riscos</b></div></div>
+                <ul class="rk">
+                  <li><div><b>Profissionais Regulares</b><small>Documentação e habilitações 100% em dia</small></div><em class="bd g">4</em></li>
+                  <li><div><b>Alerta de Vencimento</b><small>Documentos a vencer em &lt; 30 dias</small></div><em class="bd y">1</em></li>
+                  <li><div><b>Bloqueio de Plantão</b><small>Impedidos de atuar por documento vencido</small></div><em class="bd r">1</em></li>
+                </ul></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 6. COMO FUNCIONA ======================= -->
+<section class="sec" id="como-funciona" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2 rv">Da operação ao resultado. <span class="gt">Em três passos.</span></h2>
+    <ol class="steps io">
+      <li class="rv"><span class="sn">01</span><h3>Organize sua estrutura.</h3><p>Cadastre unidades, ambulâncias, colaboradores, equipes e recursos.</p></li>
+      <li class="rv"><span class="sn">02</span><h3>Centralize a operação.</h3><p>Acompanhe escalas, chamados, materiais, contratos e atividades.</p></li>
+      <li class="rv"><span class="sn">03</span><h3>Tenha visão de gestão.</h3><p>Consulte indicadores e informações operacionais e financeiras em um só lugar.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= 7. DIFERENCIAIS ======================= -->
+<section class="sec" id="diferenciais" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2 rv">Desenvolvido para quem <span class="gt">vive a operação.</span></h2>
+    <ul class="dfl">
+      <li class="rv"><h3>Plataforma modular</h3><p>Comece pelo que a sua operação precisa e amplie por etapas.</p></li>
+      <li class="rv"><h3>Visão integrada</h3><p>Operação, estoque, contratos e financeiro no mesmo lugar.</p></li>
+      <li class="rv"><h3>Gestão multiunidade</h3><p>Bases, unidades e equipes organizadas em uma única estrutura.</p></li>
+      <li class="rv"><h3>Controle de acessos</h3><p>Defina o que cada perfil pode ver e fazer na plataforma.</p></li>
+      <li class="rv"><h3>Rastreabilidade de operações</h3><p>Histórico das atividades para acompanhar o que foi feito e quando.</p></li>
+      <li class="rv"><h3>Informações para decisões gerenciais</h3><p>Indicadores operacionais e financeiros para decidir com mais clareza.</p></li>
+      <li class="rv"><h3>Personalizações conforme o negócio</h3><p>Ajustes sob medida para a realidade da sua empresa.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= 8. PROVA SOCIAL ======================= -->
+<section class="sec" id="credibilidade" style="padding-top:0">
+  <div class="wrap">
+    <div class="proof rv">
+      <div>
+        <h2 class="h2">Tecnologia desenvolvida pela <span class="gt">MODTRAX.</span></h2>
+        <p class="big">Uma solução criada com foco nas necessidades operacionais de empresas que precisam de organização, rastreabilidade e visão integrada da gestão.</p>
+        <a class="modl" href="https://www.modtrax.com.br" target="_blank" rel="noopener" data-evt="modtrax_logo" aria-label="Conhecer a Modtrax (abre em nova aba)"><img src="data:image/webp;base64,UklGRlgfAABXRUJQVlA4WAoAAAAQAAAAAAEAOwAAQUxQSMQPAAABAYdt20gSZPve9fVf8GT2vgYi+j8BgMF78B8u7G6368/BAAvcbrceB0yc4+NJItbb+KrUnU5Xlj7x4JrE0dT6kHRPNgCSoJXUD/VIprY+J7Emr4IkxrbT3YbjMSW4fTwZtBPgyCceC8Atie1Fa1LbD0kvD7G1giSVSlK3gJTklFJJV7WDkmz6kQ6+LscxjV0nPED73h0WO0ne2bZD2wA4AXBgSZa2TkiST/Cuw4cd4De+nMQnbP9Z/4OhoG0bpuEPe/8AiAi1aRswaE95Q2yTAZTgk9MP5xGwiWzbyfnEOgpAAiUlDuiTfxE/dOnOFxAxAROAjbZtZW+brX3uo1e2bJnCzCkzc5MyMzeclJmZwqUvKTOjwykzM3ODDrnx17hklvTcs388z/u+kkeG/TciJoCIDNWpFz75hrO/RFPNdljSy0545Ob3f4WSZmdQpeWIR9/amv3iGX+laMECxxNfeMsZ5i48y5SdACMqNzn6zsyGNfG/D/7fOsrCSJX7H3/P2c1Ur/jvW1ai2NFrBF7+/Bczi4DalKtPLUTMn6Jy86fcNTdIJG2z5hePN6EdOcMI8PRX37y62AJcF/Hj075G0TxFZf8THjLYFI0Mipypuy65qyk7cA5OjwezrYCwADIXsfoUU+ajJEse/djdNlPoCsnUqevfsRs78LvfBTMUMDIIo6rBhjN2RWWcwDzmmP021UYSojeJfMJff3vSJNohM4zNbWShWH3CMjK1WXfFCVBiFEXlbkfdfna2CYHoCiy8ecUb//Up7ZCVMvvAr2uGAgaQhYVBzkl+cPJ3aNSn0nLzE+5etyqwSYQwwgCqZcAOeUW+yxsfwrYCIDDCCAtVT7YfP30NpRMtuz/1MUs3UTC2AQGim2Xl/5/xHu+QHc2nDY957R3YVhhuIYyg1WDd2QMiIln0tKeu2uwJAcYkgABUvXzjR77IcJVO9Xyp6RhqEZ3qTlHmjcn7lnz3lO/B1EkvPqBtRxFGAG4H8buHZZoHPfmgmbYJSQYbW3SVdcnkd97NPGq+2rajni3DI7mRnVva5DE3gS2rV29qlLjT7TNKD7jgzYtf/+C6icK4AtrJ5T9783eAw/ZCgNj94aWl/e7amKc9njKIMjvREve85ax01CqAcr9n3gZVhGUmHvmEFXD957/FZFYBYmRHVfOfZnqzJwAj1CcENVatPfUzyPs+//5v6AnucTwNXP5AxTyIidd8AuCAhhK8ev8BfOoWNBz02nd/4MlERXIlJCuf+oiA333sZyyyAWFkQCCcc43nGhBCgBAIUb1i29nPBqZOfApM02/PFnLyIjcay2Xt1czJhAHx2dKGt5qc2Wdipm7jxjSWy5Q5bnbUXYFvffpqmrToWpiATLBlugIxtNbpZvUzV28hHn8y7YZphhUC2omTXMYx/io0tuSoKRAF8geQpdyoIAFkLfvVfdDMhedtasKYfkG2BBhSYCEAC7dLp75/OsC9T7ozm6NRGYaMYMP38Fjf3xi2ENu9JQux76NywI2tJVKSaR7+6Chc/8mveoIE1MmkgMEdgQCE22blX05bAxz06vuyVQ0to4ZEUH52WfFILlf+uqQApO0tAFO4ze5I5I0MBhmpst+uSeGPH/0Fg2rAak23B8TwqhXrz/wRYrdnPYytLmDGFMh8reIRrG3fJOk6hkhj2KMoRjLIwGFUwBHDsiMNsZHGsgGpxx5F6gMEBhF5ydupDr7/qTUNFaAFZHAPCBCZy+Y+edKXRHP88dTNBUDCQ0x/6n/fGSn57sYwAhDdKGbcEkNKcY5gsjGBWYps2pwbBgonC6tIM1QeFskYFkgaQCJmzzlnUyHpHwls53J9+WzA938VzDaS6B1NAC5/vDQ8xPHnywpYGBAQydJdBgLLYGnmhi1VPVFZsWuDQIao70OAmADUnHX2RKoj1m417LIiABGbrmP3FVUgBAbM5utBK3erYbgiNcTseZM2QxMdsAQyMt1sWL/6OzlobQEYjHtEOzn187dtBe7wqmm2RIjxBSAhw5dnwz3Wlq+Rkh0CEslHHH+7VZMCMIC23fDjW2GQePiLH35XQGBZXuqQMQIVbdkUhAXyo3488bQnHL68wSiba58294mbdBCAwd589Wc+NXPEuaDkV0cRPcERX/9hnWtXfQ9EVwYk+p0Nv/nAz1hcwQnIYGFqWXr16X8F9nzJXZhtl2KBwJgYEthgY7Hh62QfX9qKLWwwRj75tWL8p98KEX77UYxvYfpFv/XL+059+iEMFYP/5m5MMNSi/9tHrXv9WzKwLp5RD/9cObU4Zqd+/7geuUdYfZBZ+O7nr0UtYdM11JzecNazEdPPfDx1dpESIyOBGFUKFBLZ/OnyIsDxp780CVLQ3x73sRZJBmELDMmidYiXeQ5Qn1JIomswkLJkZXniORc/YlYhkVJGhlIpZEs2kTLOwdcfu/Vjx801zA1ulwXM2g1Ut4P/PfAyDKJrkD0MEmYvuHBLCQNG2EzPfvrDgJ/2vCdMz4QQHUACcogxqT/+HRvz3S0NWFu+gQH+/HcZUVj1GhNBBbAsi2iAn/+43f+VqQjVlBIBFIwR/U66jr/dduNNcgKcAMIRVCEwgMMKUeZu8setSw4hRHAJWP/819KmlHbZARRAAIIw49bCPz71HQa1moS6hJ9/FuCIl8OMhei1AcyYyZoXHNoC2vp1AvOtWWHqISd+PwwE9zy0BmTp9Ms0LltezANXpUFNMKJBGDAghj77A4RBVidYusHTBGNaoHY1ux0ARhsvIf67pokyocV7QQUbEFgaC7Lw60/8jsmK24nBXz72PeDw1+/BNgV0lAACRboZQYjdv/WAhlCWSxYH8dtLi8GLH3jErws25tYYoV/+VekIwJdjyDiG2wGIH10ZrVEgHymDkwCy/OmXIuTB/167YaYAtF9bX9KezEafjtkAAbLx9EOXWkR7VMN+e6bIsv46r7MJLT4EgUAdg0BjYYtvfuGGmHRz/VkXzcIezz+SmbkpRFf0i6yL9SXUIyyozZIHIac5PZuNXyVBPGjyrr8oSMAUkFp99AzD9/orSS3Hs4yk8sfVJEPPJwEBck686c0MXbo5koyXv4PuDHD6pYz5hM9LaObIKg6brNisfdk3VtUgb1osQAwV85zBpnPOX885nwQGj33aLjVD9EoARrgdLLrs9STDDS7tbW9SRWju69x11qC82S1nLLrCiORLM5NNnyfW/UgJGAPyxUy26lEKgYRB0JTJ2lELyGXz16JJAFcGbY7B2r2BEG3DoSDB37bMIg6brgw3CDxPkIU1pxsa7nLsgW6boF+ADJBMXX/mexFj1pYjJi1l+dtVv5xIIpffhyYFBjoSE2rbPhoFCBKhxE2dwz0QWJiuRFtb+kMAHswk/bFt6o6HLkYCLMTyV0yL3kq5KUByddlde++FRhALbAeEZm44nJkQUl+/aXOxP/AWKIxdGTwICTF9RYB40MAVA8Y0pAAzvLHBAIIAI0Y2GLDNmHZg+kU97lkt49rCgFVXHEQIccnuWw9GDJf7PG+QpgavpgqDpI4By3Xx5IX3eTaFOl4b9aa3rrLNAaC8/X5VRiCRCAFiFAwCYYQwY0uAEBrBDjGq8pS9yZqAwMKiAGTS9R5LrMzYtOZnJL1GlvoWfrELCNMrAdSp+PXJUOAg0kPI8sf7LksBltq4LwJMVwgMHqUrd8AwHwjTjREAGauvzD32Zq0ahQEjy7LADC18NGoE5dq9iSG26bW0YIiuAOEA2jJx/dt+QzCHaCNMGrIpRxIYkXxFdIUBY8CMnfSJ8QUYQGZMB8oeZXmOFTgbQAy1Qeo0PL0GiLZ8bxDqAaJP9oIJzIgR1Yu2vv8LUOYY0wx3tvveNYXA6w+s0QEZ1CM8mkF9BuRRBKLfGkmAhfvqviscdsR/w4AMlClpSOGumwIbat36PpdhHsaCG/AIMGjOvTuUbBlXgAgBGdx3j1Z4TifsKYYagooFNaRhMYuABISRPEwtGNwB2lCfEQirB3YhZf3vBX8tTksQdbfz9wAwBPtf96OU0Bwc4xdReqQey2wXYsQJfnoalGyZb9FV8pAnWcmDGTUAjAwnfSRySLIEbEAYa3IrQ800CPfIDDJ7DJZSwn2NUca3H8CoE2v26YC44Rpke/ZagKiXog5m+zUg92W58pQrCeaYbzPcu3zkCGv57hl9BoMROPy7E9bYSEp8j0k3mMQI6fnfvqaIpER5zNYMMFSg+HF3mCpEidkNCAs0xGFJa5/4hwlJxkQ56m0Ac0nk30mRg4/cbqqCy/pLSTByR1jbgyQZ287Bh4kyx3ZpHWj+ZTOCDGyECMfmdUoksFosSq5jrU34yFMWySSBAay5/7AOHL7pD34DOP7xxI0hC4v+WZCITdc1ISDlif2xzH82lfblGMyt/37yfiuqyHLNPwABDtMV0sKIrhwCGFTPsYDCw8CMHIAQv7KwstAfIjNA/7qMXyiAusuuDE2EfdUV/GJbQNQlh9ONaysSyD1mLQWiFkZNyeYvro88nVRwk+UUbtpYJGs2FwPIAGLhO0ZCEriaBbRIDZNG609+EkqA7AMCR7vb67hmySkYsIWRhYTnBi/gL0tPXtQK25ZqmRkUi1GDNx00K4zlHllyYH2e27zQOJs996WSHIahXXTmqwQGi+1aRgoqC1gdhjJs3FYdse3VtyBaRhXG3H33bOrdD4FakWUZlHKU708njzzk9hSDjNKEnViOPuXu96e0YrgsWzH5IVb+n7cNauhAgpQnDyLT7aJjiNoYsZ1mH2KhJ2kIpv83T1pKAagTP1l0LWWk3n8sc7WZvIamYcwvPi+Ty1l0NSNOb/ByCkxvyB7w8htoGHvzWWuXfxAmES+nV7niUKaAdv0vHtgq6FpeMMASvUbzZq6+ZI66uJU8L3zbM8KH0wa/Pf29+xVA6tHMmu9ciTDmx6e9/6IGkMCp2Uu+/BMggb++9b4HTRjCk9sm/dWpWWLjrrhPXPnOsw6c7FgGKf/7+x/A7S/5SmQOvkX2ALv95qtJXfzRZ26hSRsgtD2IXlsLkGy/kcy/KuMLA0SysJHMZ9j0i6Ey/Vdd9bk/MFGFwQsm+m3EAoDUk/MVPTagUI4Rdh8K5WiRSb9COSyJnhwBhXIMKROkjuowQinACr7+xRsoiRD2wsSQfi/ADrYtNq7+ksNm4dWxLQnInQUgC1d85kc0NlI5s1PqLPzwM1eiqihjsCSB8c4FGOoF524pzQIlyNi2wLFzAdmw/l5f/+fmMl2BJFy1bWcD1+Yhd14CghKiK+xseOnNMnYywFzPdmlgkp9O2OyMajswtAN+/fE/snNqFthgVSav/czXCe2cLHiAvWjT+1bPoGSnPN1OcO7Z0CQ76UVTPz4NmjQ75+bqK597JKEZdi4BVlA4IG4PAABwQQCdASoBATwAPikSh0KhoQkVxvIMAUJZkR3INaktp7t35CftJ/kvlKr7+A+737o/6fpUDK9ff6T7m/g5/x/Z75hf6Uf37+ofuF/cfi99aHmV/kH9R/3v+g93b/Jf6r/Ve530AP6V/kvWH/0fsF/07/i+wB+qfpff9L/b/Ax+1X7VfAZ/NP67/4Pz/+QD0APQA/f/tbvwg9y3gz96/Ib9dPYnzFe2ZTZNHAXMG7DeK59S/3PiDarPgfzLv9z5Wnh6fYP817Af8s/oP+5/w/5VfJD/zf5n0AfTX/o9wf+T/0D/Yf3T/J/+L/M//////eX7Jv2U9iX9UwNqz8a7jbdl7vXwSZAw14ubs2T+kd2fUM9uCMMnV5jZFBzjq5IQQrPV3guy0T6ghQasiF4bRP4gHeI5fbe97EvE1+e4Xf232cuOeOVXPkaW+TVf/1nOEyoE0QEaXqjbScXf12CSWDhkj9x7om5q6t+CDCicnAnifkNJkyhJVr9vppMZgl/VXVOthApfMoI9gApnRqLUkenYxEuNyCUQhcgujrSOA+Z+DlpkvU4HBHTTV47Eqlsi33JnewFHYNUhZSX1hy4ie+T+k57yxYCrXg49c+yVVXXrbTne/qQJm4/eD1Hc37g3PiJla1JlF8tdxvPvvVy5ZYmjUiHG7el9ZDvBpog88B/YiGegDOClVV6DCSndMTqF7whKlF+gAP7bEyxQ65WtmB9SnJeSy29BVpiAaQHcU5I608xKusloh75TQ/Rcxi3ldttVBFUucH6GtdAzXNQmcSKJ7Wil+0jCUtDf//65R6a/bOcLJPoUHRUwrojngDpyKCe9mw9vvn5ceqrk9//ouyesoQ66as6j3UnK/7MEtghf4Dab8mrehFBFed/i6ulmLwM05s3c3y3hH8vbEFDIPtuhFJBdGddN97KFPCDzfoEXKBWSKBuNq5y72rTs2Bp1gxcUWdbp3GxyxL464b1W6X0lF+ljaDBJp2MVYIKi9idSRgvSmOB2YUZ6CotDBYrS1i3ARo8D5SXSmlhGOLbIXeT8mAyPsd14AocdTe5GPhwnZePYwsADz0QzGojDO2tNNIfRQuJakI7cvGBU7XV2UyQzVPBnVmJOPCKJBUYESeqFKqSLp+fGr5CHRaezs6m8b0ACL/MvIirxFY7XUtAynACClsEYpP+9/7NtyHHPROsLhRbLpoCnmXfwatv2/7kQ8Sf6ZppH+DaellLrzv6ZBYLse928m+EOYhBCV2H4OgdqqyrVxN0zsyFymq0mS1/1Frq+dFu8pOF1kk7rucPZyi2BKKHrzR/aWwhbDeF/NxJUT2k6YSykbsV+MMce4rJMhGgXyMPb93LfNi7mucQzpuFCPLW4Eok6S71Wy43UUCvJTf0EmD6ynlZeqq2IWf8HVUJTb/XClH8qh/LHHm4lqKl47VsaKn3UXeSLv0UQ9TMaTStPl1Pf/7x4in4M0c/+DXHQ/jA9xGfzmFsrfbh/4Un4Eztj6wJZQ4dNPF7MiZ3y5gf/uAHwWnpokvi2jvm11mcgz+/nxgElGgHb/9SmZ1i9LZgrC0ul8RcSBSPkmvPXXRZX1d4pFZxoAuzY+VfomrFyZqfOpNMrMPCz7YS6s96OX0ELnWaT9dbZC22q592ACgdPrtSRx8Kz5MXVxkD10gABJjs7FwkXWjHZn87tReuDFRLEWOdrnHrPMqixLPzcoo8H62Ec38t12xxNww45wQVhzZJx9u32UOP6Aga3Yt1Z6g/MtwSKvkPGSQiocblw1E8LWz2/9lEKii8DjdTLqgKf3EesnNKx1TgR5LfqXcrzsdgYjIg+GZk86F5I4Wr1bpPC2GEoVVAwKklgJWV49faLgBTAzNAuDGHRysIcfzNDeeBSjExxFvNLuk4SxKaupCSIhZ32YaHdpGKi6mBB21Cx+d9uwPJElMOTD7JGJxAW8g4P04+BUAiqkqBITK4/t0k15pBW0AheGNhisuHLIFbhmJFCjhtEP+aUthk8yPw/i7RYVpNwWykZOg8ACcRFQK0x1zVe6vF19hehKVpNF6Kb5prYxZulaZ01O+EZV681suBd8D+ScWNIn9uPUf74UQsULy+HDy1y52AYaqPk2Hl+Khog2+vvvotFayF4KLq5VyutJss2U1ynjpjh1qxV3HgQFGhWmSQ21poj9JTWI/7pjhNSrqsc+iM/VRSNJcSc3LiIyw1tR4379O/eQ20CLjoisIgwQjohYv/OGvkxy+paduqvETR6vyr0LP3O5NunGE2cOKr5k4gqPqdZIj5xQj20eNsWOrRk0l/A75n0bN/1iGJ7nbRcCcbUX2Cgs7M8G02WvjMkyyfma1F874ck1+W4WfEfPblS9xu/nQBUnRCoeE7mcR7/e5z/EJE/4Dz2yOEzc4WwF8jnqfOx1Q4qiXDiKtKNwYE5m3dDnADuX3+k5d8hjXMDSD2d9Vl+mb3E+2pI9TgHQs+epshQGBUPP03NExiiApke63vMUyCae5m1zzT1LVIaur2WiITAFvzCByh0nFhwbjRCLKpYVP+4+PVUzhGnd9KJPye+1iEzbFI7TW+/YBUbpZT5npYnlYwX1ofPTQQYgnTKkG1wlLtrVry9xND+HqqCvLBZOjMF8dAna0JjlJkOc9IxScaSMhQPc2nvCaTmIXV1X4XbrhwCpfvwzfIzAhWULibfUU9XJ2G+GNH0p2zrbvgjdxE+otMSHdyc7kVMSoA3kEhber5ZIVcRAj92/xKEUEQclaq0nKDN8HbnIFrfDIE7LXrEPjHsIrPDT9i3YITXTGSHkQmTourzQJ2wZfJ5m4Sc4Hm7ICkWNQyVTV/3sYfGPSn0k28suSGKnEJrl8mcPkOVy2/X0mbgjGKudVaqnvcmjKDOaLEWKF8kl5Aq/eXi5+KYPX7zBsIysaqWWbCP0NQg3ASYgut8KrAE+8KzNom/LP3+FaDxlO3tsr6MXPoQxhE8okOjKF9ef2Xxf9C3uGYBda5TAZA51VB3bJWuz7vf+1VdD1Q841SMJ0lKwraofTK8CZjnzFJAYOdkEn76kJsHWyCNFUOGAGGJjDe6JmcgWIDAqqp/h0q0867SeBBiNF26k0Xvpti92mEd6zCM0HMX9aMSVqM4cjLPSQYwbdG3qZOOuTnnoZ2UrFEL6FzHAp4tKMMbIJuUH+qWCBHg+6DoktE8Gf1Yf5Iq+Hv+H/F/9b+Q4eqgXobJS/2+F0xWoxq5RJ1aIckVlM/ja9/ssfBCxaf9o6jKsnKddOxQ/25UL9P4LR0acZzzHXmCHvbxCM34QheRskHE1uTN8JXunqS1r1+iKcorKRerBoIJcxadFPxnuE58t9tp9S9CDenWgrB4ePwvypmbjAeD9HG72nR1Nfo3x1apTl90yMl5lDa39OFWqXkDrlBdz1M6tG5pL/gCP//97cQFc8ZxMiNk5lSBmInKDs8h1cKrcPE7vlljPTxO75ZL/kF5hIGtpACI4Z+L2dnhtSJoK1bVtaM3dyfL38jU6ABFV17bT27q7onGzP6bl7TD/uHA9/IzTvBDrceGkC+s+6LSdJe/2AVKrNquUbCyPBaJHZcC8ABD2oCoSyw/8oEwJEn6Q4sQSQqk1N6sBdPzSF9F1o8OuzMFYoHAsRzNdow0bPSEJkQCGcyZFD0jcL7gx6iAOMH00uQ6J91ELFX2I3Oz66NTE5rLblRYZTCoISvZMEsbTr4mQSGM9cypN0QIVGEIQT7tBzuMYBew2IFUY0p96FSm9+a825SPtBQU//vID+IN7j4xcRbm4+3/DGAYlPphydhQ+PedRwVfNgAMHkLLqY7MzmKRIq6eFyDLeQDgi/uh2RMuwuWbLHmB4S3lEX/H3nFC1E0pQdHG/aHXgbdhpN6INI7EZeZY51dDLzqoYErgsHvdzr3Yel5Xim/8BvFHhOicF8p4FF0KIkcbMIu8/7MRUzsMlvdyGNfWyoh05B5s6Nnhgp7dpfUsrDOdZfdV6JceK+rEiztvPaJ4yVLc0s42IErTSd7ENR1j1CWpNn6SdL8gyX01UCHzt5RG+OEnwFiU6PeZhhLiKGALt6fIQnQQl5qsZfJdAqFtcVYiuvyjrB2EzP0N12Gidq3u8hfaqQe4WMA6XFSugeiZ625sebgph37lAlU6nozdU4PNbeX1lTbF42N73No/GCxho9GjwIonthIHNzpT+Y11+C0e+AYZhH+xlwnzYJsGfQOZJ1ZiYYFABStcBVsSegGj31xvO/rVYK3iKqXgupVOyoB9Ni4aLZC57XrKJPIDFF3AFehe8LJ3yPSDaepxc3Iz3I7oJMN8zeHpYi+yDLt3Cl4nY/2vWhgLaDnn5zUzcuxbXL59h2NqCLGYi0Wv26SgIEPqLVIY9cLKYLRMXKHHBxCwwJf8zJ/r/Cst+C7CUjHd7DjVXBpP4+c+M1hXSLgx+7ggea8EKdxbfRBAODcJmOnIf7D/BNu2kW19/2KR7gyA/JJMQGwkRu7nwgX42dAwMF4LzXuGYAAZ6mVZwfMI92TeBdLM0dY9y0rgzZN4yQccT/dTuyOCf3LcEG2kzDvICOcc5Bju6FuU8CU/nfun+3PcudYFWwX4sZmxsFqj7UaE2Ly8tAH53/6jiJyW0i3ORbpMhpTKU+ttzkmMAvcHCAvCp0RRH1ed4aquko4gz4jlylQLuzlpS12hQHAuopmeyEC9z+P4Cmt9eA4IYImU4OMhJTNIhravIGQ4J4q3G9ZIjLRW3xygKmSO+jAel+DdHiyyTbJMaNTXjnXbBpKVfoQjQxl3OvhqAjOEYB7h7HsGj5DdC2fHJRvEUtLQR5BazsP9tmO4Yi41LmM3nnplw2lY34uPnM32d5o6EL90r0VWzyVFP6L38H9Vbvbd9CxdHIVC47jRqu5F6VaAf1SFL5KSH8g/sdtDASxMrW+lamIppnFZ7fVGMqIIdW6xTJriIrlSrKe8CR+aR7USnN8WFfqJkYkavDETUx3R+6T79zEiHQgCLPlw94QJJ60ofLh7wgSNIUbuMCfDyr7JJHeifzf8DHohssxPYoNHiGcvboetjO8MajXQxW/owu0D+ca2scoKitkoRsw+8sy6XmGg4akSX3KdA8E3OhwDNz6uZVEAAHZMNvsXkJEpaDcY+Z6UJPcDSdYrPkYOn8//SUinHkKDKSzhnNme8lbJQHcNQjOyfdiupFPG02MsohxCOb/zcf4bE35f5bn8jcW4e4O+zujc0mkfHLIZNRxsuZoYjeZvvRLfE9VGuL9/cAeBOorAAAAAAAACKCAAAAAAAA==" alt="Modtrax"></a>
+      </div>
+      <div class="slots">
+        <div class="slot"><b>Depoimentos</b><p>Espaço reservado para falas reais de clientes, com autorização.</p></div>
+        <div class="slot"><b>Cases</b><p>Espaço reservado para resultados reais, quando houver.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 9. FAQ ======================= -->
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap faq-w">
+    <h2 class="h2 rv">Perguntas frequentes</h2>
+    <div class="faq rv">
+      <div class="qa open"><h3><button class="q" id="q1" type="button" aria-expanded="true" aria-controls="a1">Para quais empresas o Ambu360 foi desenvolvido?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a1" role="region" aria-labelledby="q1"><div><p>Para empresas privadas de ambulâncias, remoção médica, atendimento pré-hospitalar e emergência médica, além de operações de área protegida, cobertura de eventos e transporte inter-hospitalar.</p></div></div></div>
+      <div class="qa"><h3><button class="q" id="q2" type="button" aria-expanded="false" aria-controls="a2">O Ambu360 permite gerenciar várias ambulâncias?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a2" role="region" aria-labelledby="q2"><div><p>A plataforma foi pensada para organizar toda a frota em um só lugar, com cadastro e acompanhamento por unidade. Os recursos de cada módulo são detalhados na apresentação comercial.</p></div></div></div>
+      <div class="qa"><h3><button class="q" id="q3" type="button" aria-expanded="false" aria-controls="a3">É possível controlar escalas e equipes?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a3" role="region" aria-labelledby="q3"><div><p>Escalas, plantões e equipes fazem parte da proposta de gestão integrada do Ambu360. Na conversa com a MODTRAX, você vê o que está disponível para o seu tipo de operação.</p></div></div></div>
+      <div class="qa"><h3><button class="q" id="q4" type="button" aria-expanded="false" aria-controls="a4">A plataforma possui gestão financeira?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a4" role="region" aria-labelledby="q4"><div><p>A gestão financeira é uma das áreas da plataforma e fica conectada à operação, para acompanhar contratos, custos e resultados. O escopo exato é apresentado na demonstração.</p></div></div></div>
+      <div class="qa"><h3><button class="q" id="q5" type="button" aria-expanded="false" aria-controls="a5">O sistema pode ser personalizado?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a5" role="region" aria-labelledby="q5"><div><p>Sim. A MODTRAX desenvolve soluções sob medida, e o Ambu360 admite personalizações conforme o negócio. Conversamos sobre o seu caso antes de propor qualquer ajuste.</p></div></div></div>
+      <div class="qa"><h3><button class="q" id="q6" type="button" aria-expanded="false" aria-controls="a6">Como funciona a apresentação comercial?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a6" role="region" aria-labelledby="q6"><div><p>Você chama no WhatsApp, conta como sua operação funciona e combinamos um horário para apresentar a plataforma.</p></div></div></div>
+      <div class="qa"><h3><button class="q" id="q7" type="button" aria-expanded="false" aria-controls="a7">Posso solicitar uma demonstração?<span class="pm" aria-hidden="true"></span></button></h3><div class="ans" id="a7" role="region" aria-labelledby="q7"><div><p>Pode. Toque em qualquer botão de contato desta página e envie a mensagem inicial, já preenchida, pelo WhatsApp.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 10. CTA FINAL ======================= -->
+<section class="sec" id="contato" style="padding-top:0">
+  <div class="wrap">
+    <div class="ctab rv">
+      <h2 class="h2">Sua operação merece uma gestão à altura.</h2>
+      <p class="lede">Descubra como o Ambu360 pode ajudar a centralizar e organizar a gestão da sua empresa de serviços médicos.</p>
+      <a class="btn lg" href="#contato" data-wa data-evt="cta_final">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z"/><path d="M9.3 8.6c.2-.4.6-.4.8-.1l.8 1.3c.1.2.1.4 0 .6l-.5.7c.6 1.1 1.5 2 2.7 2.6l.7-.5c.2-.1.4-.1.6 0l1.3.8c.3.2.3.6 0 .9-.5.7-1.4 1-2.2.8-2.8-.8-4.8-2.8-5.5-5.4-.1-.6.1-1.2.3-1.7z" fill="currentColor" stroke="none"/></svg>
+        Quero conhecer o Ambu360
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ======================= 11. FOOTER ======================= -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <img class="fl" data-logo alt="Ambu360">
+        <p class="sig">Inteligência para cada operação.</p>
+        <a class="bywrap" href="https://www.modtrax.com.br" target="_blank" rel="noopener" data-evt="footer_modtrax" style="text-decoration:none"><span>Uma solução</span><img data-mod alt="MODTRAX"></a>
+      </div>
+      <div>
+        <h4>Na página</h4>
+        <ul><li><a href="#plataforma">Plataforma</a></li><li><a href="#funcionalidades">Funcionalidades</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#faq">Perguntas frequentes</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul><li><a href="#contato" data-wa data-evt="footer_whatsapp">Falar pelo WhatsApp</a></li><li><a href="#" id="priv">Política de privacidade</a></li></ul>
+      </div>
+    </div>
+    <div class="cp"><span>© <span id="yr">2026</span> Ambu360. Todos os direitos reservados.</span><span>Telas e números desta página são demonstrativos.</span></div>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#contato" data-wa data-evt="cta_flutuante" aria-label="Falar com a equipe pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z"/><path d="M9.3 8.6c.2-.4.6-.4.8-.1l.8 1.3c.1.2.1.4 0 .6l-.5.7c.6 1.1 1.5 2 2.7 2.6l.7-.5c.2-.1.4-.1.6 0l1.3.8c.3.2.3.6 0 .9-.5.7-1.4 1-2.2.8-2.8-.8-4.8-2.8-5.5-5.4-.1-.6.1-1.2.3-1.7z" fill="currentColor" stroke="none"/></svg>
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ======================= CONFIGURAÇÃO (edite aqui) ======================= -->
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.module').forEach(m=>m.hidden=btn.dataset.filter!=='todos'&&m.dataset.group!==btn.dataset.filter)}));
-document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
-document.getElementById('lead').addEventListener('submit',e=>{e.preventDefault();const get=id=>document.getElementById(id).value.trim();const message=['Olá! Gostaria de conhecer o Ambu360.','Nome: '+get('name'),'Empresa: '+get('company'),'Contato: '+get('contact'),'Interesse: '+get('interest')].join('\n');document.getElementById('status').textContent='Abrindo WhatsApp comercial para enviar sua mensagem.';window.open('https://wa.me/5551991134545?text='+encodeURIComponent(message),'_blank','noopener,noreferrer')});
-</script></body></html>
+/* Número do WhatsApp com DDI e DDD, só dígitos. Exemplo: "5551999999999". */
+const WHATSAPP_NUMBER = "5551991134545";
+/* Mensagem inicial enviada pelos botões comerciais. */
+const WHATSAPP_MESSAGE = "Olá! Gostaria de conhecer o Ambu360 e agendar uma demonstração da plataforma para minha empresa.";
+/* Endereço da política de privacidade. Deixe vazio até ter o link. */
+const PRIVACY_URL = "";
+</script>
+
+<script>
+(function () {
+  'use strict';
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const FINE = matchMedia('(pointer: fine)').matches;
+
+  /* ---------- eventos para analytics ----------
+     Nada é enviado daqui. Cada clique comercial dispara o evento "ambu360:evento".
+     Para medir, escute esse evento e chame seu analytics, por exemplo:
+     document.addEventListener('ambu360:evento', e => gtag('event', e.detail.name, e.detail)); */
+  function track(name, detail) {
+    document.dispatchEvent(new CustomEvent('ambu360:evento', { detail: Object.assign({ name: name }, detail || {}) }));
+  }
+
+  /* ---------- aviso rápido ---------- */
+  const tEl = $('#toast'); let tT;
+  function toast(msg) {
+    tEl.textContent = msg; tEl.classList.add('show');
+    clearTimeout(tT); tT = setTimeout(() => tEl.classList.remove('show'), 4500);
+  }
+
+  /* ---------- WhatsApp ---------- */
+  const waOk = /^\d{10,15}$/.test(String(WHATSAPP_NUMBER));
+  const waUrl = waOk ? 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(WHATSAPP_MESSAGE) : '';
+  $$('[data-wa]').forEach(a => {
+    if (waOk) { a.href = waUrl; a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    a.addEventListener('click', e => {
+      track('whatsapp_click', { origem: a.dataset.evt || 'cta' });
+      if (!waOk) { e.preventDefault(); toast('Defina o número em WHATSAPP_NUMBER, no código da página.'); }
+    });
+  });
+  $$('[data-evt]:not([data-wa])').forEach(a => a.addEventListener('click', () => track('link_click', { origem: a.dataset.evt })));
+
+  /* ---------- política de privacidade e ano ---------- */
+  const priv = $('#priv');
+  if (PRIVACY_URL) { priv.href = PRIVACY_URL; priv.target = '_blank'; priv.rel = 'noopener'; }
+  else { priv.hidden = true; priv.setAttribute('aria-hidden', 'true'); }
+  $('#yr').textContent = new Date().getFullYear();
+
+  /* ---------- logos reaproveitados (um único arquivo embutido) ---------- */
+  const mainLogo = $('.brand img');
+  $$('img[data-logo]').forEach(i => { i.src = mainLogo.src; });
+  const modLogo = $('.modl img');
+  $$('img[data-mod]').forEach(i => { i.src = modLogo.src; });
+
+  /* ---------- header: sombra ao rolar e botão flutuante ---------- */
+  const hdr = $('.hdr'), fab = $('#fab');
+  function onScroll() {
+    hdr.classList.toggle('sc', scrollY > 8);
+    fab.classList.toggle('show', scrollY > 420);
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* ---------- menu mobile ---------- */
+  const burger = $('#burger'), nav = $('#nav');
+  function setMenu(open) {
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    nav.classList.toggle('open', open);
+    document.body.classList.toggle('lock', open);
+  }
+  burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+  nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  addEventListener('resize', () => { if (innerWidth > 900) setMenu(false); });
+
+  /* ---------- revelar ao rolar ---------- */
+  const revealEls = $$('.rv, .io');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es, o) => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); o.unobserve(e.target); }
+    }), { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+    revealEls.forEach(el => {
+      const sib = [...el.parentNode.children].filter(c => c.classList.contains('rv'));
+      el.style.setProperty('--d', Math.min(sib.indexOf(el), 4) * 0.07 + 's');
+      io.observe(el);
+    });
+  } else revealEls.forEach(el => el.classList.add('in'));
+
+  /* ---------- item ativo do menu ---------- */
+  const links = $$('.nav a[href^="#"]:not([data-wa])');
+  const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  if ('IntersectionObserver' in window) {
+    const so = new IntersectionObserver(es => es.forEach(e => {
+      const a = byId.get(e.target.id); if (!a) return;
+      if (e.isIntersecting) { links.forEach(l => l.removeAttribute('aria-current')); a.setAttribute('aria-current', 'true'); }
+      else a.removeAttribute('aria-current');
+    }), { rootMargin: '-40% 0px -55% 0px' });
+    [...byId.keys()].forEach(id => { const s = document.getElementById(id); if (s) so.observe(s); });
+  }
+
+  /* ---------- parallax do hero ---------- */
+  const hero = $('.hero'), layers = $$('[data-depth]', hero);
+  let mx = 0, my = 0, sy = 0, queued = false;
+  function paint() {
+    queued = false;
+    layers.forEach(l => {
+      const d = +l.dataset.depth;
+      l.style.transform = 'translate3d(' + (mx * d * 16).toFixed(1) + 'px,' + (my * d * 16 - sy * d * 0.08).toFixed(1) + 'px,0)';
+    });
+  }
+  function ask() { if (!queued) { queued = true; requestAnimationFrame(paint); } }
+  if (!RM) {
+    addEventListener('scroll', () => { sy = Math.min(scrollY, 900); ask(); }, { passive: true });
+    if (FINE) {
+      hero.addEventListener('pointermove', e => {
+        const r = hero.getBoundingClientRect();
+        mx = (e.clientX - r.left) / r.width - 0.5; my = (e.clientY - r.top) / r.height - 0.5; ask();
+      });
+      hero.addEventListener('pointerleave', () => { mx = my = 0; ask(); });
+    }
+  }
+
+  /* ---------- pausa as animações do mapa quando fora da tela ---------- */
+  const msvg = $('.mapsvg');
+  if (msvg && msvg.pauseAnimations) {
+    if (RM) msvg.pauseAnimations();
+    else if ('IntersectionObserver' in window)
+      new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? msvg.unpauseAnimations() : msvg.pauseAnimations())).observe(msvg);
+  }
+
+  /* ---------- brilho que segue o mouse nos cards ---------- */
+  if (FINE) $$('.bt').forEach(c => c.addEventListener('pointermove', e => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }));
+
+  /* ---------- contadores (valores ilustrativos) ---------- */
+  const nf = (n, d) => n.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+  function runCount(el, to) {
+    const d = +(el.dataset.dec || 0);
+    to = to == null ? +el.dataset.to : to;
+    if (RM) { el.textContent = nf(to, d); return; }
+    const from = to * 0.7, t0 = performance.now(), dur = 1300;
+    (function f(t) {
+      const p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = nf(from + (to - from) * e, d);
+      if (p < 1) requestAnimationFrame(f);
+    })(t0);
+  }
+  if ('IntersectionObserver' in window) {
+    const co = new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { runCount(e.target); o.unobserve(e.target); } }), { threshold: 0.4 });
+    $$('[data-count]').forEach(el => co.observe(el));
+  }
+
+  /* ---------- FAQ (accordion) ---------- */
+  $$('.q').forEach(b => b.addEventListener('click', () => {
+    const qa = b.closest('.qa'), willOpen = !qa.classList.contains('open');
+    $$('.qa.open').forEach(o => { o.classList.remove('open'); $('.q', o).setAttribute('aria-expanded', 'false'); });
+    if (willOpen) { qa.classList.add('open'); b.setAttribute('aria-expanded', 'true'); }
+    track('faq_toggle', { pergunta: b.textContent.trim() });
+  }));
+
+})();
+</script>
+</body>
+</html>
